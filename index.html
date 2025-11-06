@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PSAS Ganjil 2025/2026 | SMA Negeri 1 Cluring</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <style>
+    body {
+      background: linear-gradient(135deg, #5f2c82, #49a09d);
+      font-family: 'Poppins', sans-serif;
+      color: white;
+    }
+    .fade-in {
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center text-center p-4">
+
+  <!-- Header -->
+  <header class="w-full flex items-center justify-between px-6 py-4 bg-white bg-opacity-10 rounded-2xl shadow-lg mb-6">
+    <div class="flex items-center space-x-3">
+      <img src="https://smanegeri1cluring.sch.id/wp-content/uploads/2025/03/1-scaled.jpg" alt="Logo Sekolah" class="w-16 h-16 rounded-full border-2 border-white shadow-lg">
+      <div class="text-left">
+        <h1 class="text-2xl font-bold text-white">SMA Negeri 1 Cluring</h1>
+        <p class="text-sm text-gray-200">Penilaian Sumatif Akhir Semester (PSAS) Ganjil 2025/2026</p>
+      </div>
+    </div>
+    <nav class="space-x-4 text-sm md:text-base">
+      <a href="#" class="hover:text-yellow-300">Beranda</a>
+      <a href="panitia.html" class="hover:text-yellow-300">Panitia</a>
+      <a href="pos.html" class="hover:text-yellow-300">POS</a>
+      <a href="jadwal.html" class="hover:text-yellow-300">Jadwal</a>
+      <a href="tata-tertib-peserta.html" class="hover:text-yellow-300">Peserta</a>
+      <a href="tata-tertib-pengawas.html" class="hover:text-yellow-300">Pengawas</a>
+    </nav>
+  </header>
+
+  <!-- Salam -->
+  <h2 class="text-3xl font-bold fade-in">السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</h2>
+  <p class="mt-2 text-lg fade-in">Mari kita sukseskan Penilaian Sumatif Akhir Semester (PSAS) Ganjil Tahun Pelajaran 2025/2026 dengan semangat kejujuran dan tanggung jawab.</p>
+
+  <!-- Countdown Section -->
+  <div class="grid md:grid-cols-2 gap-6 mt-10 w-full max-w-5xl">
+
+    <!-- Countdown 1 -->
+    <div class="bg-white bg-opacity-10 rounded-2xl p-6 shadow-lg fade-in">
+      <h3 class="text-xl font-semibold mb-2">⏳ Menuju Pelaksanaan PSAS</h3>
+      <p class="text-sm text-gray-200">Pelaksanaan dimulai pada 1 Desember 2025</p>
+      <div id="countdown1" class="text-3xl font-bold mt-3 text-yellow-300"></div>
+    </div>
+
+    <!-- Countdown 2 -->
+    <div class="bg-white bg-opacity-10 rounded-2xl p-6 shadow-lg fade-in">
+      <h3 class="text-xl font-semibold mb-2">🗓️ Pembuatan & Pengumpulan Naskah</h3>
+      <p class="text-sm text-gray-200">10 – 21 November 2025</p>
+      <div id="countdown2" class="text-3xl font-bold mt-3 text-yellow-300"></div>
+    </div>
+
+  </div>
+
+  <!-- File Unduhan -->
+  <div class="mt-10 space-y-4 fade-in">
+    <h3 class="text-xl font-semibold">📂 Unduhan Dokumen</h3>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="https://docs.google.com/document/d/1CoIpiNAF5_D4-QOcFJGeS3CrqUWfV8pQ/edit?usp=sharing" target="_blank" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-2 px-4 rounded-full shadow-md">📄 Kisi-Kisi Soal</a>
+      <a href="https://docs.google.com/document/d/1tCxRitgBbLn5WqRNQZvqokr--JN7wqIn/edit?usp=sharing" target="_blank" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-2 px-4 rounded-full shadow-md">🗂️ Kartu Soal</a>
+      <a href="https://drive.google.com/file/d/1WQwaOQ8PiM9rhHNLQsLqYQliFlEUNQFM/view?usp=sharing" target="_blank" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-2 px-4 rounded-full shadow-md">💾 30 Soal</a>
+      <a href="https://drive.google.com/file/d/1RLapsThjitVrSMjYapUasPhq-0nVhfRP/view?usp=sharing" target="_blank" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-2 px-4 rounded-full shadow-md">💾 40 Soal</a>
+      <a href="https://drive.google.com/file/d/1A8thbzRqGwYBvqhlS-vQanYs6U4DqTUh/view?usp=sharing" target="_blank" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-2 px-4 rounded-full shadow-md">💾 50 Soal</a>
+    </div>
+  </div>
+
+  <!-- Avatar Kepala Sekolah -->
+  <div class="mt-12 flex flex-col items-center fade-in">
+    <img src="https://smanegeri1cluring.sch.id/wp-content/uploads/2025/11/foto-ks-3.jpeg" alt="Kepala Sekolah" class="w-28 h-28 rounded-full border-4 border-yellow-400 shadow-lg mb-3">
+    <p class="text-lg font-semibold">Kepala SMA Negeri 1 Cluring</p>
+  </div>
+
+  <footer class="mt-12 text-gray-200 text-sm">
+    © 2025 SMA Negeri 1 Cluring — Tim PSAS Ganjil
+  </footer>
+
+  <!-- Countdown Script -->
+  <script>
+    function startCountdown(targetDate, elementId) {
+      const countdownElement = document.getElementById(elementId);
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+        if (distance < 0) {
+          countdownElement.innerHTML = "Selesai";
+          return;
+        }
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        countdownElement.innerHTML = `${days}h ${hours}j ${minutes}m ${seconds}d`;
+      }
+      setInterval(updateCountdown, 1000);
+    }
+
+    startCountdown(new Date("Dec 1, 2025 07:00:00").getTime(), "countdown1");
+    startCountdown(new Date("Nov 21, 2025 23:59:59").getTime(), "countdown2");
+  </script>
+
+</body>
+</html>
