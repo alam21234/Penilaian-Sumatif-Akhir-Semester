@@ -193,6 +193,19 @@
       box-shadow: var(--shadow-hover);
     }
 
+    /* Avatar Container: Untuk menambah background hidup */
+    .avatar-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 136px; /* Sedikit lebih besar dari avatar untuk efek */
+      height: 136px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, transparent 100%);
+      margin-bottom: 20px;
+    }
+
     .avatar {
       width: 128px;
       height: 128px;
@@ -201,7 +214,6 @@
       border: 2px solid var(--gold-antique);
       box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15);
       background: #fff;
-      margin-bottom: 20px;
     }
 
     .name {
@@ -292,6 +304,11 @@
         gap: 28px;
       }
 
+      .avatar-container {
+        width: 120px;
+        height: 120px;
+      }
+
       .avatar {
         width: 112px;
         height: 112px;
@@ -353,91 +370,121 @@
     <div class="grid" aria-live="polite">
       <!-- Panitia cards -->
       <article class="card" tabindex="0">
-        <img class="avatar" src="https://i.ibb.co.com/LDSSCYrF/1-Helmi-S-Pd-M-Si-Penanggung-Jawab-Umum.jpg" alt="Helmi, S.Pd., M.Si., Penanggung Jawab Umum">
+        <div class="avatar-container">
+          <img class="avatar" src="https://i.ibb.co.com/LDSSCYrF/1-Helmi-S-Pd-M-Si-Penanggung-Jawab-Umum.jpg" alt="Helmi, S.Pd., M.Si., Penanggung Jawab Umum">
+        </div>
         <div class="name">Helmi, S.Pd., M.Si.</div>
         <div class="role">Penanggung Jawab Umum</div>
       </article>
 
       <article class="card" tabindex="0">
-        <img class="avatar" src="https://i.ibb.co.com/bMXVm6cQ/2-Siswo-Hariningsih-S-Pd-Penanggung-Jawab-Kegiatan.jpg" alt="Siswo Hariningsih, S.Pd., Penanggung Jawab Kegiatan">
+        <div class="avatar-container">
+          <img class="avatar" src="https://i.ibb.co.com/bMXVm6cQ/2-Siswo-Hariningsih-S-Pd-Penanggung-Jawab-Kegiatan.jpg" alt="Siswo Hariningsih, S.Pd., Penanggung Jawab Kegiatan">
+        </div>
         <div class="name">Siswo Hariningsih, S.Pd.</div>
         <div class="role">Penanggung Jawab Kegiatan</div>
       </article>
 
       <article class="card" tabindex="0">
-        <img class="avatar" src="https://i.ibb.co.com/1YJbB2Vy/3-Slamet-Wahyono-S-Pd-Ketua.jpg" alt="Slamet Wahyono, S.Pd., Ketua">
+        <div class="avatar-container">
+          <img class="avatar" src="https://i.ibb.co.com/1YJbB2Vy/3-Slamet-Wahyono-S-Pd-Ketua.jpg" alt="Slamet Wahyono, S.Pd., Ketua">
+        </div>
         <div class="name">Slamet Wahyono, S.Pd.</div>
         <div class="role">Ketua</div>
       </article>
 
       <article class="card" tabindex="0">
-        <img class="avatar" src="https://i.ibb.co.com/CsDzWHZ4/4-Alamsah-S-E-Sekretaris.jpg" alt="Alamsah, S.E., Sekretaris">
+        <div class="avatar-container">
+          <img class="avatar" src="https://i.ibb.co.com/CsDzWHZ4/4-Alamsah-S-E-Sekretaris.jpg" alt="Alamsah, S.E., Sekretaris">
+        </div>
         <div class="name">Alamsah, S.E.</div>
         <div class="role">Sekretaris</div>
       </article>
 
       <article class="card" tabindex="0">
-        <img class="avatar" src="https://i.ibb.co.com/b549tfhN/5-Uswatun-Fatimah-S-E-Bendahara.jpg" alt="Uswatun Fatimah, S.E., Bendahara">
+        <div class="avatar-container">
+          <img class="avatar" src="https://i.ibb.co.com/b549tfhN/5-Uswatun-Fatimah-S-E-Bendahara.jpg" alt="Uswatun Fatimah, S.E., Bendahara">
+        </div>
         <div class="name">Uswatun Fatimah, S.E.</div>
         <div class="role">Bendahara</div>
       </article>
 
       <article class="card" tabindex="0">
-        <img class="avatar" src="https://i.ibb.co.com/bYS0CKd/6-Slamet-Hariyadi-S-Kom-Pelaksana-Operator.jpg" alt="Slamet Hariyadi, S.Kom., Pelaksana / Operator">
+        <div class="avatar-container">
+          <img class="avatar" src="https://i.ibb.co.com/bYS0CKd/6-Slamet-Hariyadi-S-Kom-Pelaksana-Operator.jpg" alt="Slamet Hariyadi, S.Kom., Pelaksana / Operator">
+        </div>
         <div class="name">Slamet Hariyadi, S.Kom.</div>
         <div class="role">Pelaksana / Operator</div>
       </article>
 
       <article class="card" tabindex="0">
-        <img class="avatar" src="https://i.ibb.co.com/pr22gPcD/7-Moch-Irwan-M-S-Kom-Pelaksana-Operato.jpg" alt="Moch. Irwan M., S.Kom., Pelaksana / Operator">
+        <div class="avatar-container">
+          <img class="avatar" src="https://i.ibb.co.com/pr22gPcD/7-Moch-Irwan-M-S-Kom-Pelaksana-Operato.jpg" alt="Moch. Irwan M., S.Kom., Pelaksana / Operator">
+        </div>
         <div class="name">Moch. Irwan M., S.Kom.</div>
         <div class="role">Pelaksana / Operator</div>
       </article>
 
       <article class="card" tabindex="0">
-        <img class="avatar" src="https://i.ibb.co.com/8nbJ3Yc0/8-Dita-Fitriani-S-Pd-Pelaksana-Operator.jpg" alt="Dita Fitriani, S.Pd., Pelaksana / Operator">
+        <div class="avatar-container">
+          <img class="avatar" src="https://i.ibb.co.com/8nbJ3Yc0/8-Dita-Fitriani-S-Pd-Pelaksana-Operator.jpg" alt="Dita Fitriani, S.Pd., Pelaksana / Operator">
+        </div>
         <div class="name">Dita Fitriani, S.Pd.</div>
         <div class="role">Pelaksana / Operator</div>
       </article>
 
       <article class="card" tabindex="0">
-        <img class="avatar" src="https://i.ibb.co.com/Qv0Z6gLk/9-Danik-Suselowati-S-Pd-Pelaksana-Operato.jpg" alt="Danik Suselowati, S.Pd., Pelaksana / Operator">
+        <div class="avatar-container">
+          <img class="avatar" src="https://i.ibb.co.com/Qv0Z6gLk/9-Danik-Suselowati-S-Pd-Pelaksana-Operato.jpg" alt="Danik Suselowati, S.Pd., Pelaksana / Operator">
+        </div>
         <div class="name">Danik Suselowati, S.Pd.</div>
         <div class="role">Pelaksana / Operator</div>
       </article>
 
       <article class="card" tabindex="0">
-        <img class="avatar" src="https://i.ibb.co.com/23h3bBqG/10-Ervina-Febriyanti-S-Pd-Pelaksana-Operator.jpg" alt="Ervina Febriyanti, S.Pd., Pelaksana / Operator">
+        <div class="avatar-container">
+          <img class="avatar" src="https://i.ibb.co.com/23h3bBqG/10-Ervina-Febriyanti-S-Pd-Pelaksana-Operator.jpg" alt="Ervina Febriyanti, S.Pd., Pelaksana / Operator">
+        </div>
         <div class="name">Ervina Febriyanti, S.Pd.</div>
         <div class="role">Pelaksana / Operator</div>
       </article>
 
       <article class="card" tabindex="0">
-        <img class="avatar" src="https://i.ibb.co.com/YFY1CW3m/11-Muhamad-As-adi-S-Pd-Penata-Ruang.jpg" alt="Muhamad As’adi, S.Pd., Penata Ruang">
+        <div class="avatar-container">
+          <img class="avatar" src="https://i.ibb.co.com/YFY1CW3m/11-Muhamad-As-adi-S-Pd-Penata-Ruang.jpg" alt="Muhamad As’adi, S.Pd., Penata Ruang">
+        </div>
         <div class="name">Muhamad As’adi, S.Pd.</div>
         <div class="role">Penata Ruang</div>
       </article>
 
       <article class="card" tabindex="0">
-        <img class="avatar" src="https://i.ibb.co.com/s92GyWWK/12-Galih-Kidung-Wibowo-S-Sn-Penata-Ruang.jpg" alt="Galih Kidung Wibowo, S.Sn., Penata Ruang">
+        <div class="avatar-container">
+          <img class="avatar" src="https://i.ibb.co.com/s92GyWWK/12-Galih-Kidung-Wibowo-S-Sn-Penata-Ruang.jpg" alt="Galih Kidung Wibowo, S.Sn., Penata Ruang">
+        </div>
         <div class="name">Galih Kidung Wibowo, S.Sn.</div>
         <div class="role">Penata Ruang</div>
       </article>
 
       <article class="card" tabindex="0">
-        <img class="avatar" src="https://i.ibb.co.com/5hN9GYfQ/13-Viola-Lutfi-Sagita-S-Pd-Konsumsi.jpg" alt="Viola Lutfi Sagita, S.Pd., Konsumsi">
+        <div class="avatar-container">
+          <img class="avatar" src="https://i.ibb.co.com/5hN9GYfQ/13-Viola-Lutfi-Sagita-S-Pd-Konsumsi.jpg" alt="Viola Lutfi Sagita, S.Pd., Konsumsi">
+        </div>
         <div class="name">Viola Lutfi Sagita, S.Pd.</div>
         <div class="role">Konsumsi</div>
       </article>
 
       <article class="card" tabindex="0">
-        <img class="avatar" src="https://i.ibb.co.com/N6rHGwMJ/14-Erlina-Novitasari-S-Pd-Pembantu-Pelaksana.jpg" alt="Erlina Novitasari, S.Pd., Pembantu Pelaksana">
+        <div class="avatar-container">
+          <img class="avatar" src="https://i.ibb.co.com/N6rHGwMJ/14-Erlina-Novitasari-S-Pd-Pembantu-Pelaksana.jpg" alt="Erlina Novitasari, S.Pd., Pembantu Pelaksana">
+        </div>
         <div class="name">Erlina Novitasari, S.Pd.</div>
         <div class="role">Pembantu Pelaksana</div>
       </article>
 
       <article class="card" tabindex="0">
-        <img class="avatar" src="https://i.ibb.co.com/v6V3XWgW/15-Yeyen-Singgih-Adrianata-Pembantu-Pelaksana.jpg" alt="Yeyen Singgih Adrianata, Pembantu Pelaksana">
+        <div class="avatar-container">
+          <img class="avatar" src="https://i.ibb.co.com/v6V3XWgW/15-Yeyen-Singgih-Adrianata-Pembantu-Pelaksana.jpg" alt="Yeyen Singgih Adrianata, Pembantu Pelaksana">
+        </div>
         <div class="name">Yeyen Singgih Adrianata</div>
         <div class="role">Pembantu Pelaksana</div>
       </article>
