@@ -17,18 +17,27 @@
     header {
         background-color: #003366;
         color: white;
-        padding: 25px 10px;
+        padding: 25px 10px 35px 10px;
         border-bottom: 4px solid #ffd700;
     }
     header img {
-        width: 90px;
+        width: 120px;
+        height: 120px;
         border-radius: 50%;
+        background-color: white;
+        padding: 8px;
+        border: 3px solid #ffd700;
         margin-bottom: 10px;
     }
     header h1 {
         margin: 8px 0;
-        font-size: 1.6em;
+        font-size: 1.7em;
         font-weight: 700;
+    }
+    header h2 {
+        font-weight: 400;
+        font-size: 1.1em;
+        margin-bottom: 15px;
     }
     .arabic {
         font-family: 'Scheherazade New', serif;
@@ -48,12 +57,13 @@
     .card {
         background: white;
         border-radius: 20px;
-        padding: 15px;
+        padding: 20px 10px;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .card:hover {
-        transform: translateY(-5px);
+        transform: translateY(-6px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.15);
     }
     .card img {
         width: 120px;
@@ -74,7 +84,7 @@
         background: #003366;
         color: white;
         padding: 25px;
-        margin-top: 50px;
+        margin-top: 60px;
         font-size: 1.2em;
     }
     footer .arabic {
@@ -86,7 +96,9 @@
 <body>
 
 <header>
-    <img src="https://i.ibb.co.com/LDSSCYrF/1-Helmi-S-Pd-M-Si-Penanggung-Jawab-Umum.jpg" alt="Logo SMA Negeri 1 Cluring">
+    <!-- LOGO SEKOLAH -->
+    <img src="https://i.ibb.co.com/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMA Negeri 1 Cluring">
+    
     <h1>SMA NEGERI 1 CLURING</h1>
     <h2>Daftar Panitia Penilaian Sumatif Akhir Semester (PSAS) Ganjil<br>Tahun Pelajaran 2025 / 2026</h2>
     <div class="arabic">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
@@ -95,7 +107,7 @@
 <div class="container">
     <div class="grid">
 
-        <!-- Setiap Panitia -->
+        <!-- KARTU PANITIA -->
         <div class="card">
             <img src="https://i.ibb.co.com/LDSSCYrF/1-Helmi-S-Pd-M-Si-Penanggung-Jawab-Umum.jpg" alt="Helmi">
             <div class="name">Helmi, S.Pd., M.Si.</div>
