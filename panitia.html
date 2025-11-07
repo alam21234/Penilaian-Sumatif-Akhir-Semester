@@ -1,155 +1,197 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Panitia PSAS Ganjil 2025/2026 | SMA Negeri 1 Cluring</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panitia PSAS Ganjil 2025/2026 - SMA Negeri 1 Cluring</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Scheherazade+New:wght@700&display=swap" rel="stylesheet">
+<style>
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #004e92, #000428);
+        font-family: 'Poppins', sans-serif;
+        background: #f4f6fa;
+        margin: 0;
+        padding: 0;
+        color: #222;
+        text-align: center;
     }
-    .nav-link {
-      @apply text-white hover:text-yellow-300 block py-1;
+    header {
+        background-color: #003366;
+        color: white;
+        padding: 25px 10px;
+        border-bottom: 4px solid #ffd700;
     }
-  </style>
+    header img {
+        width: 90px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+    header h1 {
+        margin: 8px 0;
+        font-size: 1.6em;
+        font-weight: 700;
+    }
+    .arabic {
+        font-family: 'Scheherazade New', serif;
+        font-size: 28px;
+        color: #ffd700;
+    }
+    .container {
+        max-width: 1100px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+    }
+    .card {
+        background: white;
+        border-radius: 20px;
+        padding: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+    }
+    .card img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #003366;
+    }
+    .name {
+        font-weight: 600;
+        margin-top: 10px;
+    }
+    .role {
+        font-size: 0.95em;
+        color: #666;
+    }
+    footer {
+        background: #003366;
+        color: white;
+        padding: 25px;
+        margin-top: 50px;
+        font-size: 1.2em;
+    }
+    footer .arabic {
+        font-size: 26px;
+        color: #ffd700;
+    }
+</style>
 </head>
-<body class="text-white">
+<body>
 
-  <!-- Header -->
-  <header class="bg-gradient-to-r from-blue-900 to-blue-700 p-4 shadow-lg">
-    <div class="container mx-auto flex flex-wrap items-center justify-between">
-      <div class="flex items-center space-x-3">
-        <a href="https://ibb.co.com/xKfZBy7w">
-          <img src="https://i.ibb.co.com/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="SMAN1-Cluring-emblem" class="w-14 h-14 rounded-full border-2 border-yellow-400 shadow-md">
-        </a>
-        <div>
-          <h1 class="text-lg md:text-2xl font-bold">SMA NEGERI 1 CLURING</h1>
-          <p class="text-xs md:text-sm text-gray-200">Panitia Penilaian Sumatif Akhir Semester (PSAS) Ganjil 2025/2026</p>
+<header>
+    <img src="https://i.ibb.co.com/LDSSCYrF/1-Helmi-S-Pd-M-Si-Penanggung-Jawab-Umum.jpg" alt="Logo SMA Negeri 1 Cluring">
+    <h1>SMA NEGERI 1 CLURING</h1>
+    <h2>Daftar Panitia Penilaian Sumatif Akhir Semester (PSAS) Ganjil<br>Tahun Pelajaran 2025 / 2026</h2>
+    <div class="arabic">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+</header>
+
+<div class="container">
+    <div class="grid">
+
+        <!-- Setiap Panitia -->
+        <div class="card">
+            <img src="https://i.ibb.co.com/LDSSCYrF/1-Helmi-S-Pd-M-Si-Penanggung-Jawab-Umum.jpg" alt="Helmi">
+            <div class="name">Helmi, S.Pd., M.Si.</div>
+            <div class="role">Penanggung Jawab Umum</div>
         </div>
-      </div>
 
-      <!-- Mobile Menu Button -->
-      <button id="menuBtn" class="block md:hidden text-yellow-300 focus:outline-none">
-        ☰
-      </button>
+        <div class="card">
+            <img src="https://i.ibb.co.com/bMXVm6cQ/2-Siswo-Hariningsih-S-Pd-Penanggung-Jawab-Kegiatan.jpg" alt="Siswo">
+            <div class="name">Siswo Hariningsih, S.Pd.</div>
+            <div class="role">Penanggung Jawab Kegiatan</div>
+        </div>
 
-      <!-- Navigation -->
-      <nav id="navMenu" class="hidden md:flex md:space-x-6 mt-3 md:mt-0 text-sm">
-        <a href="index.html" class="nav-link">Beranda</a>
-        <a href="panitia.html" class="text-yellow-300 font-semibold">Panitia</a>
-        <a href="pos.html" class="nav-link">POS</a>
-        <a href="jadwal.html" class="nav-link">Jadwal</a>
-        <a href="tata_tertib_peserta.html" class="nav-link">Peserta</a>
-        <a href="tata_tertib_pengawas.html" class="nav-link">Pengawas</a>
-      </nav>
+        <div class="card">
+            <img src="https://i.ibb.co.com/1YJbB2Vy/3-Slamet-Wahyono-S-Pd-Ketua.jpg" alt="Slamet Wahyono">
+            <div class="name">Slamet Wahyono, S.Pd.</div>
+            <div class="role">Ketua</div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.ibb.co.com/CsDzWHZ4/4-Alamsah-S-E-Sekretaris.jpg" alt="Alamsah">
+            <div class="name">Alamsah, S.E.</div>
+            <div class="role">Sekretaris</div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.ibb.co.com/b549tfhN/5-Uswatun-Fatimah-S-E-Bendahara.jpg" alt="Uswatun Fatimah">
+            <div class="name">Uswatun Fatimah, S.E.</div>
+            <div class="role">Bendahara</div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.ibb.co.com/bYS0CKd/6-Slamet-Hariyadi-S-Kom-Pelaksana-Operator.jpg" alt="Slamet Hariyadi">
+            <div class="name">Slamet Hariyadi, S.Kom.</div>
+            <div class="role">Pelaksana / Operator</div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.ibb.co.com/pr22gPcD/7-Moch-Irwan-M-S-Kom-Pelaksana-Operato.jpg" alt="Irwan">
+            <div class="name">Moch. Irwan M., S.Kom.</div>
+            <div class="role">Pelaksana / Operator</div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.ibb.co.com/8nbJ3Yc0/8-Dita-Fitriani-S-Pd-Pelaksana-Operator.jpg" alt="Dita">
+            <div class="name">Dita Fitriani, S.Pd.</div>
+            <div class="role">Pelaksana / Operator</div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.ibb.co.com/Qv0Z6gLk/9-Danik-Suselowati-S-Pd-Pelaksana-Operato.jpg" alt="Danik">
+            <div class="name">Danik Suselowati, S.Pd.</div>
+            <div class="role">Pelaksana / Operator</div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.ibb.co.com/23h3bBqG/10-Ervina-Febriyanti-S-Pd-Pelaksana-Operator.jpg" alt="Ervina">
+            <div class="name">Ervina Febriyanti, S.Pd.</div>
+            <div class="role">Pelaksana / Operator</div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.ibb.co.com/YFY1CW3m/11-Muhamad-As-adi-S-Pd-Penata-Ruang.jpg" alt="As’adi">
+            <div class="name">Muhamad As’adi, S.Pd.</div>
+            <div class="role">Penata Ruang</div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.ibb.co.com/s92GyWWK/12-Galih-Kidung-Wibowo-S-Sn-Penata-Ruang.jpg" alt="Galih">
+            <div class="name">Galih Kidung Wibowo, S.Sn.</div>
+            <div class="role">Penata Ruang</div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.ibb.co.com/5hN9GYfQ/13-Viola-Lutfi-Sagita-S-Pd-Konsumsi.jpg" alt="Viola">
+            <div class="name">Viola Lutfi Sagita, S.Pd.</div>
+            <div class="role">Konsumsi</div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.ibb.co.com/N6rHGwMJ/14-Erlina-Novitasari-S-Pd-Pembantu-Pelaksana.jpg" alt="Erlina">
+            <div class="name">Erlina Novitasari, S.Pd.</div>
+            <div class="role">Pembantu Pelaksana</div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.ibb.co.com/v6V3XWgW/15-Yeyen-Singgih-Adrianata-Pembantu-Pelaksana.jpg" alt="Yeyen">
+            <div class="name">Yeyen Singgih Adrianata</div>
+            <div class="role">Pembantu Pelaksana</div>
+        </div>
     </div>
+</div>
 
-    <!-- Mobile Dropdown -->
-    <div id="mobileMenu" class="hidden md:hidden bg-blue-800 bg-opacity-90 rounded-lg mt-2 p-3 text-center space-y-2">
-      <a href="index.html" class="nav-link">Beranda</a>
-      <a href="panitia.html" class="text-yellow-300 font-semibold block">Panitia</a>
-      <a href="pos.html" class="nav-link">POS</a>
-      <a href="jadwal.html" class="nav-link">Jadwal</a>
-      <a href="tata-tertib-peserta.html" class="nav-link">Peserta</a>
-      <a href="tata-tertib-pengawas.html" class="nav-link">Pengawas</a>
-    </div>
-  </header>
-
-  <!-- Salam Pembuka -->
-  <section class="text-center py-6 bg-white bg-opacity-10 mt-4 mx-3 rounded-2xl shadow-lg">
-    <p class="text-3xl font-bold text-yellow-300 mb-2">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
-    <p class="italic text-gray-200">Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang</p>
-  </section>
-
-  <!-- Judul -->
-  <section class="text-center mt-8">
-    <h2 class="text-2xl md:text-3xl font-bold text-yellow-300">Daftar Panitia Penilaian Sumatif Akhir Semester</h2>
-    <p class="text-gray-200 mt-2 text-sm md:text-base">Tahun Pelajaran 2025/2026</p>
-  </section>
-
-  <!-- Tabel Panitia -->
-  <main class="max-w-6xl mx-auto mt-10 bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-2xl shadow-xl">
-    <div class="overflow-x-auto">
-      <table class="w-full border border-gray-300 text-sm md:text-base text-gray-100">
-        <thead class="bg-blue-800 text-yellow-300">
-          <tr>
-            <th class="border py-2 px-3">No</th>
-            <th class="border py-2 px-3">Nama</th>
-            <th class="border py-2 px-3">Jabatan Kepanitiaan</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="odd:bg-white odd:bg-opacity-5">
-            <td class="border px-3 py-2 text-center">1</td><td class="border px-3 py-2">Helmi, S.Pd., M.Si.</td><td class="border px-3 py-2">Penanggung Jawab Umum</td>
-          </tr>
-          <tr class="odd:bg-white odd:bg-opacity-5">
-            <td class="border px-3 py-2 text-center">2</td><td class="border px-3 py-2">Siswo Hariningsih, S.Pd.</td><td class="border px-3 py-2">Penanggung Jawab Kegiatan</td>
-          </tr>
-          <tr class="odd:bg-white odd:bg-opacity-5">
-            <td class="border px-3 py-2 text-center">3</td><td class="border px-3 py-2">Slamet Wahyono, S.Pd.</td><td class="border px-3 py-2">Ketua</td>
-          </tr>
-          <tr class="odd:bg-white odd:bg-opacity-5">
-            <td class="border px-3 py-2 text-center">4</td><td class="border px-3 py-2">Alamsah, S.E.</td><td class="border px-3 py-2">Sekretaris</td>
-          </tr>
-          <tr class="odd:bg-white odd:bg-opacity-5">
-            <td class="border px-3 py-2 text-center">5</td><td class="border px-3 py-2">Uswatun Fatimah, S.E.</td><td class="border px-3 py-2">Bendahara</td>
-          </tr>
-          <tr class="odd:bg-white odd:bg-opacity-5">
-            <td class="border px-3 py-2 text-center">6</td><td class="border px-3 py-2">Slamet Hariyadi, S.Kom.</td><td class="border px-3 py-2">Pelaksana / Operator</td>
-          </tr>
-          <tr class="odd:bg-white odd:bg-opacity-5">
-            <td class="border px-3 py-2 text-center">7</td><td class="border px-3 py-2">Moch. Irwan M., S.Kom.</td><td class="border px-3 py-2">Pelaksana / Operator</td>
-          </tr>
-          <tr class="odd:bg-white odd:bg-opacity-5">
-            <td class="border px-3 py-2 text-center">8</td><td class="border px-3 py-2">Dita Fitriani, S.Pd.</td><td class="border px-3 py-2">Pelaksana / Operator</td>
-          </tr>
-          <tr class="odd:bg-white odd:bg-opacity-5">
-            <td class="border px-3 py-2 text-center">9</td><td class="border px-3 py-2">Danik Suselowati, S.Pd.</td><td class="border px-3 py-2">Pelaksana / Operator</td>
-          </tr>
-          <tr class="odd:bg-white odd:bg-opacity-5">
-            <td class="border px-3 py-2 text-center">10</td><td class="border px-3 py-2">Ervina Febriyanti, S.Pd.</td><td class="border px-3 py-2">Pelaksana / Operator</td>
-          </tr>
-          <tr class="odd:bg-white odd:bg-opacity-5">
-            <td class="border px-3 py-2 text-center">11</td><td class="border px-3 py-2">Muhamad As’adi, S.Pd.</td><td class="border px-3 py-2">Penata Ruang</td>
-          </tr>
-          <tr class="odd:bg-white odd:bg-opacity-5">
-            <td class="border px-3 py-2 text-center">12</td><td class="border px-3 py-2">Galih Kidung Wibowo, S.Sn.</td><td class="border px-3 py-2">Penata Ruang</td>
-          </tr>
-          <tr class="odd:bg-white odd:bg-opacity-5">
-            <td class="border px-3 py-2 text-center">13</td><td class="border px-3 py-2">Viola Lutfi Sagita, S.Pd.</td><td class="border px-3 py-2">Konsumsi</td>
-          </tr>
-          <tr class="odd:bg-white odd:bg-opacity-5">
-            <td class="border px-3 py-2 text-center">14</td><td class="border px-3 py-2">Erlina Novitasari, S.Pd.</td><td class="border px-3 py-2">Pembantu Pelaksana</td>
-          </tr>
-          <tr class="odd:bg-white odd:bg-opacity-5">
-            <td class="border px-3 py-2 text-center">15</td><td class="border px-3 py-2">Yeyen Singgih Adrianata</td><td class="border px-3 py-2">Pembantu Pelaksana</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </main>
-
-  <!-- Salam Penutup -->
-  <section class="text-center mt-10 mb-6">
-    <p class="text-2xl md:text-3xl font-bold text-yellow-300">وَالسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللّٰهِ وَبَرَكَاتُهُ</p>
-    <p class="text-gray-200 text-sm italic mt-1">Semoga Allah SWT memberikan kelancaran dan keberkahan dalam pelaksanaan kegiatan ini.</p>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-blue-900 text-center py-4 text-xs text-gray-200 border-t border-yellow-400">
-    © 2025 SMA NEGERI 1 CLURING — Panitia Penilaian Sumatif Akhir Semester
-  </footer>
-
-  <!-- Mobile Menu Script -->
-  <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  </script>
+<footer>
+    <div class="arabic">وَالسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</div>
+    <p>Panitia PSAS Ganjil 2025/2026 — SMA Negeri 1 Cluring</p>
+</footer>
 
 </body>
 </html>
