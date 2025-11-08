@@ -16,7 +16,7 @@
     header {
       background-color: #0284c7;
       color: white;
-      padding: 15px 25px;
+      padding: 10px 25px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -26,6 +26,16 @@
       z-index: 10;
     }
 
+    header img {
+      height: 50px;
+      border-radius: 8px;
+    }
+
+    header .title {
+      flex-grow: 1;
+      text-align: center;
+    }
+
     header h1 {
       font-size: 1.1rem;
       margin: 0;
@@ -33,12 +43,17 @@
       letter-spacing: 1px;
     }
 
+    nav {
+      display: flex;
+      gap: 10px;
+    }
+
     header nav a {
       background-color: #facc15;
       color: #111827;
       text-decoration: none;
       font-weight: 600;
-      padding: 8px 16px;
+      padding: 8px 14px;
       border-radius: 6px;
       transition: background 0.3s ease;
     }
@@ -111,13 +126,14 @@
     }
 
     .note {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: #374151;
       margin-top: 20px;
       background: #fef9c3;
       padding: 12px 16px;
       border-radius: 8px;
       border-left: 4px solid #facc15;
+      line-height: 1.5;
     }
 
     footer {
@@ -152,7 +168,6 @@
       background-color: #34d399;
     }
 
-    /* Tombol Kembali ke Atas */
     #toTopBtn {
       display: none;
       position: fixed;
@@ -173,66 +188,80 @@
     #toTopBtn:hover {
       background-color: #38bdf8;
     }
+
+    @media (max-width: 800px) {
+      main { padding: 20px; }
+      .table-wrap { overflow-x: auto; }
+      table { min-width: 720px; }
+    }
   </style>
 </head>
 
 <body>
   <header>
-    <h1>Dokumen PSAS Ganjil 2025/2026</h1>
-    <nav>
-      <a href="#alokasi">📘 Alokasi PSAS</a>
-    </nav>
+    <img src="https://i.ibb.co.com/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMA Negeri 1 Cluring">
+    <div class="title">
+      <h1>Dokumen PSAS Ganjil 2025/2026</h1>
+    </div>
+    <img src="https://i.ibb.co.com/1YJbB2Vy/3-Slamet-Wahyono-S-Pd-Ketua.jpg" alt="Ketua PSAS" style="height:55px;border-radius:50%;">
   </header>
+
+  <main id="beranda">
+    <h2>Penilaian Sumatif Akhir Semester (PSAS) Ganjil</h2>
+    <h3>Tahun Pelajaran 2025 / 2026</h3>
+    <p>
+      Dokumen ini memuat alokasi waktu per mata pelajaran pada pelaksanaan PSAS Ganjil. 
+      Setiap guru menyusun soal berdasarkan proporsi waktu yang telah ditetapkan agar penilaian berjalan efektif dan proporsional.
+    </p>
+  </main>
 
   <main id="alokasi">
     <h2>ALOKASI WAKTU PER MATA PELAJARAN</h2>
-    <h3>PENILAIAN SUMATIF AKHIR SEMESTER (PSAS) GANJIL<br>TAHUN PELAJARAN 2025 / 2026</h3>
+    <h3>PSAS GANJIL TAHUN PELAJARAN 2025 / 2026</h3>
 
-    <p>
-      Tabel berikut memuat alokasi waktu per mata pelajaran dalam pelaksanaan Penilaian Sumatif Akhir Semester (PSAS) Ganjil Tahun Pelajaran 2025/2026.
-      Setiap guru menyusun butir soal secara proporsional sesuai dengan waktu yang ditetapkan bagi masing-masing mata pelajaran,
-      sehingga komposisi soal mencerminkan kedalaman materi dan karakteristik penilaian yang berlaku di satuan pendidikan.
-    </p>
+    <div class="table-wrap">
+      <table>
+        <caption>Tabel Alokasi Waktu per Kelas</caption>
+        <thead>
+          <tr>
+            <th>No</th><th>Mata Pelajaran</th><th>Kelas X</th><th>Kelas XI</th><th>Kelas XII</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td class="left">Pendidikan Agama Islam dan Budi Pekerti</td><td>60</td><td>60</td><td>90</td></tr>
+          <tr><td>2</td><td class="left">Pendidikan Pancasila</td><td>60</td><td>60</td><td>90</td></tr>
+          <tr><td>3</td><td class="left">Bahasa Indonesia</td><td>90</td><td>90</td><td>90</td></tr>
+          <tr><td>4</td><td class="left">Matematika</td><td>90</td><td>90</td><td>90</td></tr>
+          <tr><td>5</td><td class="left">Bahasa Inggris</td><td>90</td><td>90</td><td>90</td></tr>
+          <tr><td>6</td><td class="left">Pendidikan Jasmani, Olahraga, dan Kesehatan</td><td>60</td><td>60</td><td>90</td></tr>
+          <tr><td>7</td><td class="left">Sejarah</td><td>60</td><td>90</td><td>90</td></tr>
+          <tr><td>8</td><td class="left">Seni dan Budaya</td><td>60</td><td>60</td><td>90</td></tr>
+          <tr><td>9</td><td class="left">Fisika</td><td>90</td><td>90</td><td>90</td></tr>
+          <tr><td>10</td><td class="left">Kimia</td><td>90</td><td>90</td><td>90</td></tr>
+          <tr><td>11</td><td class="left">Biologi</td><td>90</td><td>90</td><td>90</td></tr>
+          <tr><td>12</td><td class="left">Sosiologi</td><td>90</td><td>90</td><td>90</td></tr>
+          <tr><td>13</td><td class="left">Ekonomi</td><td>90</td><td>90</td><td>90</td></tr>
+          <tr><td>14</td><td class="left">Geografi</td><td>90</td><td>90</td><td>90</td></tr>
+          <tr><td>15</td><td class="left">Bahasa Jepang</td><td>—</td><td>90</td><td>90</td></tr>
+          <tr><td>16</td><td class="left">Informatika</td><td>60</td><td>90</td><td>90</td></tr>
+          <tr><td>17</td><td class="left">Kewirausahaan</td><td>—</td><td>60</td><td>90</td></tr>
+          <tr><td>18</td><td class="left">Matematika Lanjut</td><td>—</td><td>90</td><td>90</td></tr>
+          <tr><td>19</td><td class="left">Bahasa Inggris Tingkat Lanjut</td><td>—</td><td>90</td><td>90</td></tr>
+          <tr><td>20</td><td class="left">Muatan Lokal (Mulok)</td><td>60</td><td>60</td><td>90</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-    <table>
-      <caption>Tabel Alokasi Waktu per Kelas</caption>
-      <thead>
-        <tr>
-          <th>No</th>
-          <th>Mata Pelajaran</th>
-          <th>Kelas X</th>
-          <th>Kelas XI</th>
-          <th>Kelas XII</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>1</td><td class="left">Pendidikan Agama Islam dan Budi Pekerti</td><td>60</td><td>60</td><td>90</td></tr>
-        <tr><td>2</td><td class="left">Pendidikan Pancasila</td><td>60</td><td>60</td><td>90</td></tr>
-        <tr><td>3</td><td class="left">Bahasa Indonesia</td><td>90</td><td>90</td><td>90</td></tr>
-        <tr><td>4</td><td class="left">Matematika</td><td>90</td><td>90</td><td>90</td></tr>
-        <tr><td>5</td><td class="left">Bahasa Inggris</td><td>90</td><td>90</td><td>90</td></tr>
-        <tr><td>6</td><td class="left">Pendidikan Jasmani, Olahraga, dan Kesehatan (Penjasorkes)</td><td>60</td><td>60</td><td>90</td></tr>
-        <tr><td>7</td><td class="left">Sejarah</td><td>60</td><td>90</td><td>90</td></tr>
-        <tr><td>8</td><td class="left">Seni dan Budaya</td><td>60</td><td>60</td><td>90</td></tr>
-        <tr><td>9</td><td class="left">Fisika</td><td>90</td><td>90</td><td>90</td></tr>
-        <tr><td>10</td><td class="left">Kimia</td><td>90</td><td>90</td><td>90</td></tr>
-        <tr><td>11</td><td class="left">Biologi</td><td>90</td><td>90</td><td>90</td></tr>
-        <tr><td>12</td><td class="left">Sosiologi</td><td>90</td><td>90</td><td>90</td></tr>
-        <tr><td>13</td><td class="left">Ekonomi</td><td>90</td><td>90</td><td>90</td></tr>
-        <tr><td>14</td><td class="left">Geografi</td><td>90</td><td>90</td><td>90</td></tr>
-        <tr><td>15</td><td class="left">Bahasa Jepang</td><td>—</td><td>90</td><td>90</td></tr>
-        <tr><td>16</td><td class="left">Informatika</td><td>60</td><td>90</td><td>90</td></tr>
-        <tr><td>17</td><td class="left">Kewirausahaan</td><td>—</td><td>60</td><td>90</td></tr>
-        <tr><td>18</td><td class="left">Matematika Lanjut</td><td>—</td><td>90</td><td>90</td></tr>
-        <tr><td>19</td><td class="left">Bahasa Inggris Tingkat Lanjut</td><td>—</td><td>90</td><td>90</td></tr>
-        <tr><td>20</td><td class="left">Muatan Lokal (Mulok)</td><td>60</td><td>60</td><td>90</td></tr>
-      </tbody>
-    </table>
-
-    <div class="note">
-      <strong>Keterangan:</strong> Penetapan alokasi waktu disesuaikan dengan karakteristik mata pelajaran dan tingkat kompetensi peserta didik.
-      Setiap guru penyusun soal memastikan kesesuaian antara waktu pengerjaan dan kedalaman materi yang diujikan,
-      serta mengikuti ketentuan penilaian yang ditetapkan oleh satuan pendidikan.
+    <div id="keterangan" class="note">
+      <strong>Catatan Alokasi Waktu (ringkas):</strong>
+      <ol style="margin:8px 0 0 18px; padding:0;">
+        <li>Alokasi waktu disesuaikan dengan karakter dan tingkat kesulitan mata pelajaran.</li>
+        <li>Guru menyesuaikan jumlah dan bentuk soal dengan waktu yang tersedia.</li>
+        <li>Waktu <strong>90 menit</strong> untuk soal beragam dan materi luas.</li>
+        <li>Waktu <strong>60 menit</strong> untuk soal yang fokus pada konsep utama.</li>
+        <li>Tanda <strong>(–)</strong> berarti mata pelajaran tidak diujikan pada jenjang tersebut.</li>
+        <li>Ketentuan ini menjadi acuan resmi penyusunan perangkat ujian PSAS.</li>
+      </ol>
     </div>
 
     <a href="index.html" class="back-button">🏠 Kembali ke Halaman Muka</a>
@@ -245,7 +274,6 @@
   </footer>
 
   <script>
-    // Tombol kembali ke atas muncul saat scroll
     const toTopBtn = document.getElementById("toTopBtn");
     window.onscroll = function() {
       if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
@@ -254,8 +282,6 @@
         toTopBtn.style.display = "none";
       }
     };
-
-    // Fungsi untuk kembali ke atas
     toTopBtn.addEventListener("click", function() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
