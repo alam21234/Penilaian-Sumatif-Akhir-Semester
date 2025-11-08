@@ -6,21 +6,53 @@
   <title>PSAS Ganjil 2025/2026 | SMA Negeri 1 Cluring</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
+    /* 🌙 Mode Gelap Otomatis */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: linear-gradient(135deg, #1e1e2f, #0d9488);
+        color: #f0f0f0;
+      }
+      header {
+        background: rgba(255, 255, 255, 0.05);
+      }
+      section, footer {
+        background: rgba(255, 255, 255, 0.05);
+      }
+    }
+
     body {
       background: linear-gradient(135deg, #5f2c82, #49a09d);
       font-family: 'Poppins', sans-serif;
       color: white;
       min-height: 100vh;
       background-attachment: fixed;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
     }
-    html { scroll-behavior: smooth; }
-    .fade-in { animation: fadeIn 1.5s ease-in-out both; }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+
+    /* ✨ Efek Fade Masuk Saat Scroll */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1.2s ease, transform 1.2s ease;
     }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Navigasi */
     nav a { transition: color 0.3s, transform 0.3s; }
     nav a:hover { color: #facc15; transform: scale(1.05); }
+
+    /* Tulisan Arab */
+    .arabic-gold {
+      font-size: 2rem;
+      color: #FFD700;
+      font-weight: bold;
+      text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+      margin-bottom: 1rem;
+    }
   </style>
 </head>
 <body class="flex flex-col items-center text-center">
@@ -50,7 +82,8 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="fade-in w-full min-h-screen flex flex-col justify-center items-center px-6 mt-20">
+  <section class="w-full min-h-screen flex flex-col justify-center items-center px-6 mt-20 fade-in">
+    <p class="arabic-gold">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
     <h2 class="text-4xl md:text-5xl font-extrabold text-yellow-300 mb-4">
       Penilaian Sumatif Akhir Semester
     </h2>
@@ -120,8 +153,9 @@
     © 2025 SMA Negeri 1 Cluring — Tim PSAS Ganjil | Dibuat dengan ❤️ dan semangat gotong royong
   </footer>
 
-  <!-- Countdown Script -->
+  <!-- JS: Countdown & Animasi Scroll -->
   <script>
+    // Countdown
     function startCountdown(targetDate, elementId) {
       const el = document.getElementById(elementId);
       function update() {
@@ -142,6 +176,17 @@
     }
     startCountdown(new Date("Dec 1, 2025 07:00:00").getTime(), "countdown1");
     startCountdown(new Date("Nov 21, 2025 23:59:59").getTime(), "countdown2");
+
+    // Animasi Scroll Masuk
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+    fadeEls.forEach(el => observer.observe(el));
   </script>
 
 </body>
