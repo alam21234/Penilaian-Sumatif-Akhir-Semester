@@ -33,12 +33,17 @@
       letter-spacing: 1px;
     }
 
+    nav {
+      display: flex;
+      gap: 10px;
+    }
+
     header nav a {
       background-color: #facc15;
       color: #111827;
       text-decoration: none;
       font-weight: 600;
-      padding: 8px 16px;
+      padding: 8px 14px;
       border-radius: 6px;
       transition: background 0.3s ease;
     }
@@ -128,6 +133,28 @@
       margin-top: 30px;
     }
 
+    #topBtn {
+      display: none;
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 99;
+      font-size: 14px;
+      border: none;
+      outline: none;
+      background-color: #2563eb;
+      color: white;
+      cursor: pointer;
+      padding: 10px 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+
+    #topBtn:hover {
+      background-color: #3b82f6;
+    }
+
     html {
       scroll-behavior: smooth;
     }
@@ -138,19 +165,25 @@
   <header>
     <h1>Dokumen PSAS Ganjil 2025/2026</h1>
     <nav>
+      <a href="#beranda">🏠 Beranda</a>
       <a href="#alokasi">📘 Alokasi PSAS</a>
+      <a href="#keterangan">📝 Keterangan</a>
     </nav>
   </header>
 
+  <main id="beranda">
+    <h2>Penilaian Sumatif Akhir Semester (PSAS) Ganjil</h2>
+    <h3>Tahun Pelajaran 2025 / 2026</h3>
+    <p>
+      Dokumen ini berisi rincian alokasi waktu per mata pelajaran pada pelaksanaan Penilaian Sumatif Akhir Semester (PSAS) Ganjil.
+      Setiap guru mata pelajaran menyusun butir soal berdasarkan proporsi waktu yang telah ditetapkan secara formal
+      oleh satuan pendidikan agar pelaksanaan penilaian berjalan efektif, objektif, dan proporsional sesuai karakteristik kompetensi peserta didik.
+    </p>
+  </main>
+
   <main id="alokasi">
     <h2>ALOKASI WAKTU PER MATA PELAJARAN</h2>
-    <h3>PENILAIAN SUMATIF AKHIR SEMESTER (PSAS) GANJIL<br>TAHUN PELAJARAN 2025 / 2026</h3>
-
-    <p>
-      Tabel berikut memuat alokasi waktu per mata pelajaran dalam pelaksanaan Penilaian Sumatif Akhir Semester (PSAS) Ganjil Tahun Pelajaran 2025/2026.
-      Setiap guru menyusun butir soal secara proporsional sesuai dengan waktu yang ditetapkan bagi masing-masing mata pelajaran,
-      sehingga komposisi soal mencerminkan kedalaman materi dan karakteristik penilaian yang berlaku di satuan pendidikan.
-    </p>
+    <h3>PSAS GANJIL TAHUN PELAJARAN 2025 / 2026</h3>
 
     <table>
       <caption>Tabel Alokasi Waktu per Kelas</caption>
@@ -186,7 +219,9 @@
         <tr><td>20</td><td class="left">Muatan Lokal (Mulok)</td><td>60</td><td>60</td><td>90</td></tr>
       </tbody>
     </table>
+  </main>
 
+  <main id="keterangan">
     <div class="note">
       <strong>Keterangan:</strong> Penetapan alokasi waktu disesuaikan dengan karakteristik mata pelajaran dan tingkat kompetensi peserta didik.
       Setiap guru penyusun soal memastikan kesesuaian antara waktu pengerjaan dan kedalaman materi yang diujikan,
@@ -194,8 +229,24 @@
     </div>
   </main>
 
+  <button id="topBtn" title="Kembali ke Atas">⬆️ Atas</button>
+
   <footer>
     © 2025 | Dokumen PSAS Ganjil SMA Negeri 1 Cluring – Tahun Pelajaran 2025/2026
   </footer>
+
+  <script>
+    const topBtn = document.getElementById("topBtn");
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        topBtn.style.display = "block";
+      } else {
+        topBtn.style.display = "none";
+      }
+    };
+    topBtn.onclick = function() {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    };
+  </script>
 </body>
 </html>
