@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PSAS Ganjil 2025/2026 | SMA Negeri 1 Cluring</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
   <style>
     /* 🌙 Mode Gelap Otomatis */
     @media (prefers-color-scheme: dark) {
@@ -12,10 +13,7 @@
         background: linear-gradient(135deg, #1e1e2f, #0d9488);
         color: #f0f0f0;
       }
-      header {
-        background: rgba(255, 255, 255, 0.05);
-      }
-      section, footer {
+      header, section, footer {
         background: rgba(255, 255, 255, 0.05);
       }
     }
@@ -53,9 +51,37 @@
       text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
       margin-bottom: 1rem;
     }
+
+    /* Musik Tombol */
+    #music-control {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(255,255,255,0.2);
+      border: 2px solid #facc15;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(255,215,0,0.6);
+      transition: transform 0.3s;
+    }
+    #music-control:hover {
+      transform: scale(1.1);
+      background: rgba(255,255,255,0.3);
+    }
   </style>
 </head>
 <body class="flex flex-col items-center text-center">
+
+  <!-- Musik Instrumental -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_51e67e8f9a.mp3?filename=soft-inspiring-piano-ambient-110111.mp3" type="audio/mp3">
+  </audio>
+  <div id="music-control" title="Putar / Jeda Musik 🎶">🎵</div>
 
   <!-- Header -->
   <header class="w-full fixed top-0 left-0 z-50 bg-white bg-opacity-10 backdrop-blur-md shadow-lg">
@@ -140,10 +166,11 @@
       </div>
     </section>
 
-    <!-- Avatar Kepala Sekolah -->
+    <!-- Kepala Sekolah -->
     <section class="mt-24 flex flex-col items-center fade-in">
-      <img src="https://smanegeri1cluring.sch.id/wp-content/uploads/2025/11/foto-ks-3.jpeg" alt="Kepala Sekolah" class="w-32 h-32 rounded-full border-4 border-yellow-400 shadow-2xl mb-4">
-      <p class="text-lg font-semibold">Kepala SMA Negeri 1 Cluring</p>
+      <img src="https://smanegeri1cluring.sch.id/wp-content/uploads/2025/11/foto-ks-3.jpeg" alt="Kepala Sekolah" class="w-36 h-36 rounded-full border-4 border-yellow-400 shadow-2xl mb-4">
+      <p class="text-lg font-semibold text-yellow-300">Drs. H. Suroso, M.Pd</p>
+      <p class="text-gray-100">Kepala SMA Negeri 1 Cluring</p>
     </section>
 
   </main>
@@ -153,7 +180,7 @@
     © 2025 SMA Negeri 1 Cluring — Tim PSAS Ganjil | Dibuat dengan ❤️ dan semangat gotong royong
   </footer>
 
-  <!-- JS: Countdown & Animasi Scroll -->
+  <!-- JS -->
   <script>
     // Countdown
     function startCountdown(targetDate, elementId) {
@@ -161,10 +188,7 @@
       function update() {
         const now = new Date().getTime();
         const distance = targetDate - now;
-        if (distance < 0) {
-          el.innerHTML = "Selesai";
-          return;
-        }
+        if (distance < 0) { el.innerHTML = "Selesai"; return; }
         const d = Math.floor(distance / (1000 * 60 * 60 * 24));
         const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -177,16 +201,31 @@
     startCountdown(new Date("Dec 1, 2025 07:00:00").getTime(), "countdown1");
     startCountdown(new Date("Nov 21, 2025 23:59:59").getTime(), "countdown2");
 
-    // Animasi Scroll Masuk
+    // Fade Animasi
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.2 });
     fadeEls.forEach(el => observer.observe(el));
+
+    // Musik Otomatis Saat Scroll
+    const audio = document.getElementById('bg-music');
+    const musicBtn = document.getElementById('music-control');
+    let musicPlayed = false;
+
+    window.addEventListener('scroll', () => {
+      if (!musicPlayed) {
+        audio.play().catch(()=>{});
+        musicPlayed = true;
+      }
+    });
+
+    musicBtn.addEventListener('click', () => {
+      if (audio.paused) audio.play();
+      else audio.pause();
+    });
   </script>
 
 </body>
