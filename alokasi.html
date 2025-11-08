@@ -45,16 +45,8 @@
 
     .header-content {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .logo-section {
-      display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 100%;
     }
 
     header img {
@@ -74,34 +66,9 @@
       letter-spacing: 1px;
     }
 
-    .ketua-photo {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 10px 0;
-    }
-
-    .ketua-photo img {
-      height: 120px;
-      width: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid var(--secondary-color);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .ketua-photo p {
-      margin: 8px 0 0 0;
-      font-weight: 600;
-      color: white;
-      text-align: center;
-    }
-
     nav {
       display: flex;
       gap: 10px;
-      width: 100%;
-      justify-content: center;
     }
 
     header nav a {
@@ -112,9 +79,6 @@
       padding: 8px 14px;
       border-radius: 6px;
       transition: all 0.3s ease;
-      flex: 1;
-      text-align: center;
-      max-width: 200px;
     }
 
     header nav a:hover {
@@ -128,6 +92,50 @@
       border-radius: 12px;
       box-shadow: var(--shadow);
       margin: 30px auto;
+    }
+
+    .ketua-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 25px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .ketua-photo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .ketua-photo img {
+      height: 160px;
+      width: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--secondary-color);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .ketua-info {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .ketua-info h3 {
+      margin: 0;
+      font-size: 1.3rem;
+      color: #1e3a8a;
+    }
+
+    .ketua-info p {
+      margin: 5px 0 0;
+      font-weight: 500;
+      color: #334155;
     }
 
     h2 {
@@ -270,25 +278,19 @@
     }
 
     @media (min-width: 768px) {
-      .header-content {
+      .ketua-section {
         flex-direction: row;
-        flex-wrap: wrap;
-      }
-      
-      .logo-section {
-        width: auto;
-        flex: 1;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
       }
       
       .ketua-photo {
-        order: 2;
-        margin: 0 20px;
+        margin-bottom: 0;
       }
       
-      nav {
-        order: 3;
-        width: 100%;
-        margin-top: 15px;
+      .ketua-info {
+        text-align: left;
       }
       
       header h1 {
@@ -300,36 +302,12 @@
       }
     }
 
-    @media (min-width: 992px) {
-      .header-content {
-        flex-wrap: nowrap;
-      }
-      
-      .logo-section {
-        flex: 0 0 auto;
-      }
-      
-      .title {
-        flex-grow: 1;
-      }
-      
-      .ketua-photo {
-        order: 0;
-        margin: 0 20px;
-      }
-      
-      nav {
-        order: 0;
-        width: auto;
-        margin-top: 0;
-      }
-      
-      header nav a {
-        flex: 0 0 auto;
-      }
-    }
-
     @media (max-width: 767px) {
+      .header-content {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
       .table-container {
         border: 1px solid #d1d5db;
         border-radius: 8px;
@@ -350,8 +328,8 @@
       }
       
       .ketua-photo img {
-        height: 100px;
-        width: 100px;
+        height: 130px;
+        width: 130px;
       }
       
       h2 {
@@ -369,18 +347,10 @@
   <header>
     <div class="container">
       <div class="header-content">
-        <div class="logo-section">
-          <img src="https://i.ibb.co.com/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMA Negeri 1 Cluring">
-          <div class="title">
-            <h1>Dokumen PSAS Ganjil 2025/2026</h1>
-          </div>
+        <img src="https://i.ibb.co.com/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMA Negeri 1 Cluring">
+        <div class="title">
+          <h1>Dokumen PSAS Ganjil 2025/2026</h1>
         </div>
-        
-        <div class="ketua-photo">
-          <img src="https://i.ibb.co.com/1YJbB2Vy/3-Slamet-Wahyono-S-Pd-Ketua.jpg" alt="Ketua PSAS">
-          <p>Ketua PSAS<br>Slamet Wahyono, S.Pd.</p>
-        </div>
-        
         <nav>
           <a href="#beranda">Beranda</a>
           <a href="#alokasi">Alokasi Waktu</a>
@@ -391,6 +361,17 @@
 
   <div class="container">
     <main id="beranda">
+      <!-- Foto Ketua PSAS ditempatkan di sini -->
+      <div class="ketua-section">
+        <div class="ketua-photo">
+          <img src="https://i.ibb.co.com/1YJbB2Vy/3-Slamet-Wahyono-S-Pd-Ketua.jpg" alt="Ketua PSAS">
+        </div>
+        <div class="ketua-info">
+          <h3>Slamet Wahyono, S.Pd.</h3>
+          <p>Ketua PSAS</p>
+        </div>
+      </div>
+      
       <h2>Penilaian Sumatif Akhir Semester (PSAS) Ganjil</h2>
       <h3>Tahun Pelajaran 2025 / 2026</h3>
       <p>
