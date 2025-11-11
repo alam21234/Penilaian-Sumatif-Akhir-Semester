@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jadwal Ujian Sekolah — Versi Final Akurat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e3f2fd, #e8f5e9);
+      padding: 30px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #1a73e8, #0d47a1);
+      color: white;
+      text-align: center;
+      padding: 40px 30px;
+      position: relative;
+    }
+
+    .header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .header p {
+      font-size: 1.3rem;
+      opacity: 0.9;
+      font-weight: 300;
+    }
+
+    .header::after {
+      content: "🎓";
+      font-size: 5rem;
+      position: absolute;
+      bottom: -20px;
+      right: 30px;
+      opacity: 0.15;
+    }
+
+    /* Foto Penanggung Jawab */
+    .photo-container {
+      text-align: center;
+      margin: 20px 0;
+      padding: 20px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .photo-container img {
+      max-width: 200px;
+      border-radius: 12px;
+      border: 3px solid #1a73e8;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .photo-container img:hover {
+      transform: scale(1.05);
+    }
+
+    .photo-caption {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #555;
+      font-weight: 500;
+    }
+
+    .table-container {
+      padding: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      font-size: 15px;
+    }
+
+    th {
+      background: #1a73e8;
+      color: white;
+      font-weight: 600;
+      padding: 18px;
+      text-align: center;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    td {
+      padding: 15px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+      transition: background-color 0.3s ease;
+    }
+
+    td:hover {
+      background-color: #f5f9ff;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #fafafa;
+    }
+
+    .date {
+      font-style: italic;
+      color: #666;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .subject-x {
+      background-color: #e3f2fd;
+      border-left: 4px solid #1a73e8;
+    }
+
+    .subject-xi {
+      background-color: #e8f5e9;
+      border-left: 4px solid #689f38;
+    }
+
+    .subject-xii {
+      background-color: #fff3e0;
+      border-left: 4px solid #e65100;
+    }
+
+    /* Hanya 60 menit yang ditandai */
+    .highlight-60 {
+      background-color: #ffebee !important;
+      font-weight: 700;
+      color: #c62828;
+      position: relative;
+    }
+
+    .highlight-60::before {
+      content: "⏱️";
+      position: absolute;
+      left: 10px;
+      font-size: 18px;
+    }
+
+    .note {
+      margin: 40px 30px;
+      padding: 20px;
+      background: #fff8e1;
+      border-left: 5px solid #ffa000;
+      border-radius: 0 10px 10px 0;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #5d4037;
+    }
+
+    .note strong {
+      color: #e65100;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background: #f5f5f5;
+      color: #757575;
+      font-size: 13px;
+      border-top: 1px solid #eee;
+    }
+
+    .footer::before {
+      content: "📅 ";
+    }
+
+    .footer::after {
+      content: " • Dibuat otomatis • " attr(data-date);
+    }
+
+    @media print {
+      body {
+        background: white !important;
+        padding: 0 !important;
+      }
+      .container {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+      }
+      .header, .footer {
+        background: white !important;
+        color: black !important;
+      }
+      .highlight-60::before {
+        display: none !important;
+      }
+      .highlight-60 {
+        background: transparent !important;
+        color: #000 !important;
+        font-weight: bold !important;
+      }
+      .photo-container {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2rem;
+      }
+      .header p {
+        font-size: 1.1rem;
+      }
+      td, th {
+        font-size: 14px;
+        padding: 12px;
+      }
+      .photo-container img {
+        max-width: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>JADWAL UJIAN SEKOLAH</h1>
+      <p>SMAN 1 CLURING — Desember 2025</p>
+    </div>
+
+    <!-- Foto Penanggung Jawab -->
+    <div class="photo-container">
+      <a href="https://ibb.co.com/B5BJ3f0c">
+        <img src="https://i.ibb.co.com/bMXVm6cQ/2-Siswo-Hariningsih-S-Pd-Penanggung-Jawab-Kegiatan.jpg" 
+             alt="2-Siswo-Hariningsih-S-Pd-Penanggung-Jawab-Kegiatan" 
+             border="0">
+      </a>
+      <div class="photo-caption">
+        <strong>Penanggung Jawab Kegiatan:</strong> Siswo Hariningsih, S.Pd
+      </div>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>NO</th>
+            <th>HARI / TANGGAL</th>
+            <th>WAKTU</th>
+            <th>X <span style="font-size:12px; background:#1a73e8; padding:2px 6px; border-radius:10px; color:white;">Kelas X</span></th>
+            <th>XI <span style="font-size:12px; background:#689f38; padding:2px 6px; border-radius:10px; color:white;">Kelas XI</span></th>
+            <th>XII <span style="font-size:12px; background:#e65100; padding:2px 6px; border-radius:10px; color:white;">Kelas XII</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- SENIN -->
+          <tr>
+            <td rowspan="5">1</td>
+            <td class="date">SENIN<br>1 Des 2025</td>
+            <td>07.00–08.30</td>
+            <td class="subject-x">BAHASA INDONESIA</td>
+            <td class="subject-xi">BHS. INGGRIS</td>
+            <td class="subject-xii">MATEMATIKA UMUM</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>08.30–08.45</td>
+            <td class="subject-x">ISTIRAHAT</td>
+            <td class="subject-xi">ISTIRAHAT</td>
+            <td class="subject-xii">ISTIRAHAT</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>08.45–10.15</td>
+            <td class="subject-x">MATEMATIKA</td>
+            <td class="subject-xi">EKONOMI / INFORMATIKA / SOSIOLOGI</td>
+            <td class="subject-xii">MATEMATIKA LANJUT / GEOGRAFI / EKONOMI</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>10.15–10.30</td>
+            <td class="subject-x">ISTIRAHAT</td>
+            <td class="subject-xi">ISTIRAHAT</td>
+            <td class="subject-xii">ISTIRAHAT</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>10.30–12.00</td> <!-- 90 menit → tidak di-highlight -->
+            <td class="subject-x">SOSIOLOGI</td>
+            <td class="subject-xi">GEOGRAFI / BHS. JEPANG</td>
+            <td class="subject-xii">BIOLOGI</td>
+          </tr>
+
+          <!-- SELASA -->
+          <tr>
+            <td rowspan="5">3</td>
+            <td class="date">SELASA<br>2 Des 2025</td>
+            <td>07.00–08.30</td>
+            <td class="subject-x">BHS. INGGRIS</td>
+            <td class="subject-xi">BHS. INDONESIA</td>
+            <td class="subject-xii">KIMIA / FISIKA / BHS. JEPANG</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>08.30–08.45</td>
+            <td class="subject-x">ISTIRAHAT</td>
+            <td class="subject-xi">ISTIRAHAT</td>
+            <td class="subject-xii">ISTIRAHAT</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>08.45–10.15</td>
+            <td class="subject-x">GEOGRAFI</td>
+            <td class="subject-xi">MATEMATIKA UMUM</td>
+            <td class="subject-xii">KEWIRAUSAHAAN</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>10.15–10.30</td>
+            <td class="subject-x">ISTIRAHAT</td>
+            <td class="subject-xi">ISTIRAHAT</td>
+            <td class="subject-xii">ISTIRAHAT</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="highlight-60">10.30–11.30</td> <!-- 60 menit -->
+            <td class="highlight-60 subject-x">SEJARAH</td>
+            <td class="highlight-60 subject-xi">MULOK</td>
+            <td class="highlight-60 subject-xii">SENI BUDAYA</td>
+          </tr>
+
+          <!-- RABU -->
+          <tr>
+            <td rowspan="5">2</td>
+            <td class="date">RABU<br>3 Des 2025</td>
+            <td>07.00–08.30</td>
+            <td class="subject-x">KIMIA</td>
+            <td class="subject-xi">BIOLOGI / BHS. INGGRIS LANJUT</td>
+            <td class="subject-xii">INFORMATIKA / SOSIOLOGI</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>08.30–09.00</td>
+            <td class="subject-x">ISTIRAHAT</td>
+            <td class="subject-xi">ISTIRAHAT</td>
+            <td class="subject-xii">ISTIRAHAT</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="highlight-60">09.00–10.00</td> <!-- ✅ 60 menit DIHIGHLIGHT -->
+            <td class="highlight-60 subject-x">PENDIDIKAN AGAMA</td>
+            <td class="highlight-60 subject-xi">KEWIRAUSAHAAN</td>
+            <td class="highlight-60 subject-xii">PENJASORKES</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>10.00–10.30</td>
+            <td class="subject-x">ISTIRAHAT</td>
+            <td class="subject-xi">ISTIRAHAT</td>
+            <td class="subject-xii">ISTIRAHAT</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="highlight-60">10.30–11.30</td> <!-- 60 menit -->
+            <td class="highlight-60 subject-x">PEND. PANCASILA</td>
+            <td></td>
+            <td></td>
+          </tr>
+
+          <!-- KAMIS -->
+          <tr>
+            <td rowspan="5">4</td>
+            <td class="date">KAMIS<br>4 Des 2025</td>
+            <td>07.00–08.30</td>
+            <td class="subject-x">FISIKA</td>
+            <td class="subject-xi">MATEMATIKA LANJUT</td>
+            <td class="subject-xii">BHS. INDONESIA</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>08.30–09.00</td>
+            <td class="subject-x">ISTIRAHAT</td>
+            <td class="subject-xi">ISTIRAHAT</td>
+            <td class="subject-xii">ISTIRAHAT</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="highlight-60">09.00–10.00</td> <!-- ✅ 60 menit DIHIGHLIGHT -->
+            <td class="highlight-60 subject-x">INFORMATIKA</td>
+            <td class="highlight-60 subject-xi">PENDIDIKAN AGAMA</td>
+            <td class="highlight-60 subject-xii">MULOK (BHS. JAWA)</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>10.00–10.30</td>
+            <td class="subject-x">ISTIRAHAT</td>
+            <td class="subject-xi">ISTIRAHAT</td>
+            <td class="subject-xii">ISTIRAHAT</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="highlight-60">10.30–11.30</td> <!-- 60 menit -->
+            <td class="highlight-60 subject-x">PENJASORKES</td>
+            <td class="highlight-60 subject-xi">SENI BUDAYA</td>
+            <td class="highlight-60 subject-xii">PENDIDIKAN AGAMA</td>
+          </tr>
+
+          <!-- JUM'AT -->
+          <tr>
+            <td rowspan="3">5</td>
+            <td class="date">JUM'AT<br>5 Des 2025</td>
+            <td>07.00–08.30</td>
+            <td class="subject-x">BIOLOGI</td>
+            <td class="subject-xi">KIMIA / FISIKA</td>
+            <td class="subject-xii">BHS. INGGRIS LANJUT</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>08.30–09.00</td>
+            <td class="subject-x">ISTIRAHAT</td>
+            <td class="subject-xi">ISTIRAHAT</td>
+            <td class="subject-xii">ISTIRAHAT</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="highlight-60">09.00–10.00</td> <!-- 60 menit -->
+            <td class="highlight-60 subject-x">SENI DAN PRAKARYA</td>
+            <td class="highlight-60 subject-xi">PENDIDIKAN PANCASILA</td>
+            <td class="highlight-60 subject-xii">SEJARAH</td>
+          </tr>
+
+          <!-- SENIN KE-2 -->
+          <tr>
+            <td rowspan="3">6</td>
+            <td class="date">SENIN<br>8 Des 2025</td>
+            <td>07.00–08.30</td>
+            <td class="subject-x">EKONOMI</td>
+            <td class="subject-xi">SEJARAH</td>
+            <td class="subject-xii">BHS. INGGRIS</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>08.30–09.00</td>
+            <td class="subject-x">ISTIRAHAT</td>
+            <td class="subject-xi">ISTIRAHAT</td>
+            <td class="subject-xii">ISTIRAHAT</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="highlight-60">09.00–10.00</td> <!-- 60 menit -->
+            <td class="highlight-60 subject-x">MULOK</td>
+            <td class="highlight-60 subject-xi">PENJASORKES</td>
+            <td class="highlight-60 subject-xii">PENDIDIKAN PANCASILA</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">
+      <strong>📌 Catatan:</strong> 
+      <ul style="margin-top: 10px; line-height: 1.6;">
+        <li>Hanya sesi ujian selama <strong>60 menit</strong> yang diberi tanda ⏱️ dan latar belakang merah muda.</li>
+        <li>Sesi 90 menit (seperti 08.45–10.15 atau 10.30–12.00) tetap normal, teks hitam.</li>
+        </ul>
+    </div>
+
+    <div class="footer" data-date="Dibuat pada 12 November 2025">
+      📄 Jadwal Ujian Resmi — SMAN 1 Cluring | Berlaku Pada Saat PSAS sekolah
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const now = new Date();
+      const dateStr = now.toLocaleDateString('id-ID', { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+      });
+      document.querySelector('.footer').setAttribute('data-date', dateStr);
+    });
+  </script>
+</body>
+</html>
