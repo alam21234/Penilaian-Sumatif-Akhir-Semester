@@ -1,318 +1,162 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar Penyerahan Naskah, Kartu, Kisi-Kisi Soal</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            margin: 0;
-            padding: 20px;
-            min-height: 100vh;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .header {
-            text-align: center;
-            color: white;
-            margin-bottom: 30px;
-        }
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        .header p {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-        .table-container {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            overflow: hidden;
-            overflow-x: auto;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-        }
-        th {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            color: white;
-            padding: 18px 12px;
-            text-align: left;
-            font-weight: 600;
-            font-size: 1.1em;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-        td {
-            padding: 15px 12px;
-            border-bottom: 1px solid #e0e0e0;
-            font-size: 0.95em;
-        }
-        tr:nth-child(even) {
-            background-color: #f8f9ff;
-        }
-        tr:hover {
-            background-color: #e3f2fd;
-            transform: scale(1.01);
-            transition: all 0.3s ease;
-        }
-        .number {
-            font-weight: bold;
-            color: #4a5568;
-            text-align: center !important;
-        }
-        .subject {
-            font-weight: 600;
-            color: #2d3748;
-        }
-        .class {
-            background: #e2e8f0;
-            padding: 5px 10px;
-            border-radius: 15px;
-            text-align: center;
-            font-weight: 500;
-            color: #4a5568;
-        }
-        .teacher-list {
-            line-height: 1.6;
-        }
-        .teacher-name {
-            display: block;
-            margin-bottom: 3px;
-        }
-        .teacher-degree {
-            font-size: 0.85em;
-            color: #718096;
-            font-style: italic;
-        }
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2em;
-            }
-            th, td {
-                padding: 12px 8px;
-                font-size: 0.9em;
-            }
-            .teacher-name {
-                font-size: 0.9em;
-            }
-        }
-        .footer {
-            text-align: center;
-            color: white;
-            margin-top: 30px;
-            opacity: 0.8;
-            font-size: 0.9em;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daftar Penyerahan Kelas XII</title>
+<style>
+    body {
+        font-family: "Segoe UI", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #4b1aff, #1a9fff);
+        min-height: 100vh;
+        color: white;
+    }
+
+    header {
+        padding: 25px;
+        text-align: center;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        background: rgba(0,0,0,0.2);
+        backdrop-filter: blur(8px);
+    }
+
+    .container {
+        margin: 30px auto;
+        background: white;
+        color: #333;
+        width: 95%;
+        max-width: 1100px;
+        padding: 25px;
+        border-radius: 14px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+        font-size: 15px;
+    }
+
+    th {
+        background: #4b1aff;
+        color: white;
+        padding: 10px;
+        font-size: 16px;
+        letter-spacing: 0.5px;
+    }
+
+    td {
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+
+    tr:nth-child(even) {
+        background: #f5f5f5;
+    }
+
+    tr:hover {
+        background: #e3e9ff;
+    }
+
+    .footer {
+        margin-top: 30px;
+        text-align: right;
+        font-size: 15px;
+        color: #fff;
+    }
+
+    .footer strong {
+        font-size: 17px;
+    }
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Daftar Penyerahan Naskah, Kartu, Kisi-Kisi Soal</h1>
-            <p>Kelas XII - Tahun Ajaran 2025</p>
-        </div>
-        
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th width="60">NO</th>
-                        <th>NAMA GURU</th>
-                        <th>MATA PELAJARAN</th>
-                        <th width="80">KLS</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="number">1</td>
-                        <td class="teacher-list">
-                            <span class="teacher-name">Drs. Suroso.</span>
-                        </td>
-                        <td class="subject">PAI</td>
-                        <td class="class">XII</td>
-                    </tr>
-                    <tr>
-                        <td class="number">2</td>
-                        <td class="teacher-list">
-                            <span class="teacher-name">Dra. Puji Rahayu</span>
-                        </td>
-                        <td class="subject">Pendidikan Pancasila</td>
-                        <td class="class">XII</td>
-                    </tr>
-                    <tr>
-                        <td class="number">3</td>
-                        <td class="teacher-list">
-                            <span class="teacher-name">Endry Ernaning Tyas Tuty, S.Pd</span>
-                        </td>
-                        <td class="subject">Bahasa Indonesia</td>
-                        <td class="class">XII</td>
-                    </tr>
-                    <tr>
-                        <td class="number">4</td>
-                        <td class="teacher-list">
-                            <span class="teacher-name">Agus Supriyadi, S.Pd</span>
-                            <span class="teacher-name">Ali Muthohar, S.Pd</span>
-                            <span class="teacher-name">Wirdah Pramita Nasrudin, S.Pd.</span>
-                        </td>
-                        <td class="subject">Matematika</td>
-                        <td class="class">XII</td>
-                    </tr>
-                    <tr>
-                        <td class="number">5</td>
-                        <td class="teacher-list">
-                            <span class="teacher-name">Rini Asih, S.Pd</span>
-                            <span class="teacher-name">Dwi Indah Lestari, S.Pd</span>
-                        </td>
-                        <td class="subject">Matematika Lanjut</td>
-                        <td class="class">XII</td>
-                    </tr>
-                    <tr>
-                        <td class="number">6</td>
-                        <td class="teacher-list">
-                            <span class="teacher-name">Drs. Misnan</span>
-                        </td>
-                        <td class="subject">Bahasa Inggris</td>
-                        <td class="class">XII</td>
-                    </tr>
-                    <tr>
-                        <td class="number">7</td>
-                        <td class="teacher-list">
-                            <span class="teacher-name">Drs. Makhrus</span>
-                        </td>
-                        <td class="subject">PJOK</td>
-                        <td class="class">XII</td>
-                    </tr>
-                    <tr>
-                        <td class="number">8</td>
-                        <td class="teacher-list">
-                            <span class="teacher-name">Ritwan Junianto, S.Pd</span>
-                        </td>
-                        <td class="subject">Sejarah</td>
-                        <td class="class">XII</td>
-                    </tr>
-                    <tr>
-                        <td class="number">9</td>
-                        <td class="teacher-list">
-                            <span class="teacher-name">Wiyanto, S.Pd</span>
-                        </td>
-                        <td class="subject">Seni Tari</td>
-                        <td class="class">XII</td>
-                    </tr>
-                    <tr>
-                        <td class="number">10</td>
-                        <td class="teacher-list">
-                            <span class="teacher-name">Tina Wahyu Lestari, S.Pd</span>
-                        </td>
-                        <td class="subject">Fisika</td>
-                        <td class="class">XII</td>
-                    </tr>
-                    <tr>
-                        <td class="number">11</td>
-                        <td class="teacher-list">
-                            <span class="teacher-name">Slamet Wahyono, S.Pd</span>
-                        </td>
-                        <td class="subject">Kimia</td>
-                        <td class="class">XII</td>
-                    </tr>
-                    <tr>
-                        <td class="number">12</td>
-                        <td class="teacher-list">
-                            <span class="teacher-name">Drs. Sumardami</span>
-                        </td>
-                        <td class="subject">Biologi</td>
-                        <td class="class">XII</td>
-                    </tr>
-                    <tr>
-                        <td class="number">13</td>
-                        <td class="teacher-list">
-                            <span class="teacher-name">Moh. Suharso, S.Pd</span>
-                        </td>
-                        <td class="subject">Sosiologi</td>
-                        <td class="class">XII</td>
-                    </tr>
-                    <tr>
-                        <td class="number">14</td>
-                        <td class="teacher-list">
-                            <span class="teacher-name">Siti Rofiah, S.Pd</span>
-                        </td>
-                        <td class="subject">Ekonomi</td>
-                        <td class="class">XII</td>
-                    </tr>
-                    <tr>
-                        <td class="number">15</td>
-                        <td class="teacher-list">
-                            <span class="teacher-name">Dra. Subekti Rahayu</span>
-                        </td>
-                        <td class="subject">Geografi</td>
-                        <td class="class">XII</td>
-                    </tr>
-                    <tr>
-                        <td class="number">16</td>
-                        <td class="teacher-list">
-                            <span class="teacher-name">Joko Irawan, S.Pd</span>
-                        </td>
-                        <td class="subject">Bahasa Jepang</td>
-                        <td class="class">XII</td>
-                    </tr>
-                    <tr>
-                        <td class="number">17</td>
-                        <td class="teacher-list">
-                            <span class="teacher-name">Slamet Hariyadi, S.Kom</span>
-                        </td>
-                        <td class="subject">Informatika</td>
-                        <td class="class">XII</td>
-                    </tr>
-                    <tr>
-                        <td class="number">18</td>
-                        <td class="teacher-list">
-                            <span class="teacher-name">Adha Qiftiyatul M, S.Pd</span>
-                        </td>
-                        <td class="subject">Prakarya dan Kewirausahaan</td>
-                        <td class="class">XII</td>
-                    </tr>
-                    <tr>
-                        <td class="number">19</td>
-                        <td class="teacher-list">
-                            <span class="teacher-name">Shienda Setyawatie, S.Pd</span>
-                        </td>
-                        <td class="subject">Bahasa Inggris tingkat lanjut</td>
-                        <td class="class">XII</td>
-                    </tr>
-                    <tr>
-                        <td class="number">20</td>
-                        <td class="teacher-list">
-                            <span class="teacher-name">Danik Suselowati, S.Pd</span>
-                        </td>
-                        <td class="subject">Mulok</td>
-                        <td class="class">XII</td>
-                    </tr>
-                    <tr>
-                        <td class="number">21</td>
-                        <td class="teacher-list">
-                            <span class="teacher-name">Andis Dwi Saputro, S.Pd</span>
-                            <span class="teacher-name">Mia Indriyani, S.Pd</span>
-                        </td>
-                        <td class="subject">BK/BP</td>
-                        <td class="class">XII</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        
-        <div class="footer">
-            <p>Daftar Penyerahan Naskah, Kartu, dan Kisi-Kisi Soal Kelas XII</p>
-        </div>
+
+<header>
+    📘 DAFTAR PENYERAHAN SOAL KELAS XII – PSAS GANJIL 2025/2026
+</header>
+
+<div class="container">
+    <table>
+        <tr>
+            <th>NO</th>
+            <th>NAMA GURU</th>
+            <th>MATA PELAJARAN</th>
+            <th>KLS</th>
+        </tr>
+
+        <tr><td>1</td><td>Drs. Suroso</td><td>PAI</td><td>XII</td></tr>
+        <tr><td>2</td><td>Dra. Puji Rahayu</td><td>Pendidikan Pancasila</td><td>XII</td></tr>
+        <tr><td>3</td><td>Endry Ernaning Tyas Tuty, S.Pd</td><td>Bahasa Indonesia</td><td>XII</td></tr>
+
+        <tr>
+            <td>4</td>
+            <td>
+                1. Agus Supriyadi, S.Pd<br>
+                2. Ali Muthohar, S.Pd<br>
+                3. Wirdah Pramita Nasrudin, S.Pd
+            </td>
+            <td>Matematika</td>
+            <td>XII</td>
+        </tr>
+
+        <tr>
+            <td>5</td>
+            <td>
+                1. Rini Asih, S.Pd<br>
+                2. Dwi Indah Lestari, S.Pd
+            </td>
+            <td>Matematika Lanjut</td>
+            <td>XII</td>
+        </tr>
+
+        <tr><td>6</td><td>Drs. Misnan</td><td>Bahasa Inggris</td><td>XII</td></tr>
+        <tr><td>7</td><td>Drs. Makhrus</td><td>PJOK</td><td>XII</td></tr>
+        <tr><td>8</td><td>Ritwan Junianto, S.Pd</td><td>Sejarah</td><td>XII</td></tr>
+        <tr><td>9</td><td>Wiyanto, S.Pd</td><td>Seni Tari</td><td>XII</td></tr>
+        <tr><td>10</td><td>Tina Wahyu Lestari, S.Pd</td><td>Fisika</td><td>XII</td></tr>
+        <tr><td>11</td><td>Slamet Wahyono, S.Pd</td><td>Kimia</td><td>XII</td></tr>
+
+        <tr>
+            <td>12</td>
+            <td>Drs. Sumardami</td>
+            <td>Biologi</td>
+            <td>XII</td>
+        </tr>
+
+        <tr><td>13</td><td>Moh. Suharso, S.Pd</td><td>Sosiologi</td><td>XII</td></tr>
+        <tr><td>14</td><td>Siti Rofiah, S.Pd</td><td>Ekonomi</td><td>XII</td></tr>
+        <tr><td>15</td><td>Dra. Subekti Rahayu</td><td>Geografi</td><td>XII</td></tr>
+        <tr><td>16</td><td>Joko Irawan, S.Pd</td><td>Bahasa Jepang</td><td>XII</td></tr>
+        <tr><td>17</td><td>Slamet Hariyadi, S.Kom</td><td>Informatika</td><td>XII</td></tr>
+        <tr><td>18</td><td>Adha Qiftiyatul M, S.Pd</td><td>Prakarya dan Kewirausahaan</td><td>XII</td></tr>
+        <tr><td>19</td><td>Shienda Setyawatie, S.Pd</td><td>Bahasa Inggris Tingkat Lanjut</td><td>XII</td></tr>
+        <tr><td>20</td><td>Danik Suselowati, S.Pd</td><td>Mulok</td><td>XII</td></tr>
+
+        <tr>
+            <td>21</td>
+            <td>
+                1. Andis Dwi Saputro, S.Pd<br>
+                2. Mia Indriyani, S.Pd
+            </td>
+            <td>BK/BP</td>
+            <td>XII</td>
+        </tr>
+
+    </table>
+
+    <div class="footer">
+        Cluring, 7 November 2025<br>
+        <strong>Kepala SMA Negeri 1 Cluring</strong><br><br>
+        Helmi, S.Pd., M.Si<br>
+        NIP. 19750626 200312 2 011
     </div>
+</div>
+
 </body>
 </html>
