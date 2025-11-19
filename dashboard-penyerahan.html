@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Penyerahan Naskah</title>
 
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
         body {
             margin: 0;
-            font-family: "Segoe UI", Arial, sans-serif;
-            background: linear-gradient(135deg, #0f172a, #1e3a8a, #0ea5e9);
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #1e1e2f, #14576c, #0d9488);
             background-size: 300% 300%;
             animation: gradientMove 12s ease infinite;
             color: white;
@@ -21,23 +24,36 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* NAVBAR */
+        /* NAVBAR PREMIUM */
         nav {
-            background: rgba(0,0,0,0.35);
-            backdrop-filter: blur(8px);
-            padding: 12px 30px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            padding: 12px 35px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             border-bottom: 1px solid rgba(255,255,255,0.2);
+            z-index: 50;
         }
 
-        nav .logo {
-            font-size: 20px;
-            font-weight: bold;
-            letter-spacing: 1px;
+        nav .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        nav .logo-area img {
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+        }
+
+        nav .logo-area span {
+            font-size: 19px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
         nav a {
@@ -49,31 +65,31 @@
         }
 
         nav a:hover {
-            color: #a5f3fc;
+            color: #facc15;
         }
 
-        /* WRAPPER */
         .container {
             text-align: center;
-            margin-top: 60px;
+            margin-top: 75px;
         }
 
         h1 {
-            font-size: 36px;
+            font-size: 38px;
             margin-bottom: 5px;
             font-weight: 700;
+            color: #fcd34d;
         }
 
         p.subtitle {
             margin-top: 0;
-            font-size: 17px;
+            font-size: 18px;
             opacity: 0.9;
         }
 
-        /* CARD PILIHAN */
+        /* GRID CARD */
         .grid {
             display: grid;
-            gap: 25px;
+            gap: 28px;
             justify-content: center;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             padding: 40px;
@@ -82,28 +98,25 @@
         }
 
         .card {
-            background: rgba(255,255,255,0.1);
-            padding: 28px;
-            border-radius: 18px;
+            background: rgba(255,255,255,0.12);
+            padding: 30px;
+            border-radius: 20px;
             text-align: center;
             cursor: pointer;
             border: 1px solid rgba(255,255,255,0.25);
-            transition: 0.3s;
+            transition: 0.35s;
+            backdrop-filter: blur(8px);
         }
 
         .card:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-6px);
+            background: rgba(255,255,255,0.22);
+            transform: translateY(-8px) scale(1.03);
         }
 
         .card h2 {
             margin: 0 0 10px;
-            font-size: 26px;
-        }
-
-        .card p {
-            margin: 0;
-            opacity: 0.9;
+            font-size: 28px;
+            color: #fcd34d;
         }
 
         footer {
@@ -115,12 +128,18 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- NAVIGATION -->
     <nav>
-        <div class="logo">📘 Penyerahan Naskah PSAS</div>
+        <div class="logo-area">
+            <img src="https://i.ibb.co.com/Q7C0TZKh/SMAN1-Cluring-emblem.png" alt="Logo SMAN 1 Cluring">
+            <span>PSAS 2025/2026</span>
+        </div>
+
         <div>
+            <a href="index.html">Beranda</a>
             <a href="dashboard-penyerahan.html">Dashboard</a>
             <a href="daftar-penyerahan-x.html">Kelas X</a>
             <a href="daftar-penyerahan-xi.html">Kelas XI</a>
