@@ -1,240 +1,294 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Daftar Penyerahan Naskah – Kelas X</title>
-
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Penyerahan Naskah, Kartu, Kisi-Kisi Soal</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .table-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        th {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 18px 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1em;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        td {
+            padding: 15px 12px;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 0.95em;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9ff;
+        }
+        tr:hover {
+            background-color: #e3f2fd;
+            transform: scale(1.01);
+            transition: all 0.3s ease;
+        }
+        .number {
+            font-weight: bold;
+            color: #4a5568;
+            text-align: center !important;
+        }
+        .subject {
+            font-weight: 600;
+            color: #2d3748;
+        }
+        .class {
+            background: #e2e8f0;
+            padding: 5px 10px;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: 500;
+            color: #4a5568;
+        }
+        .teacher-list {
+            line-height: 1.6;
+        }
+        .teacher-name {
+            display: block;
+            margin-bottom: 3px;
+        }
+        .teacher-degree {
+            font-size: 0.85em;
+            color: #718096;
+            font-style: italic;
+        }
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            th, td {
+                padding: 12px 8px;
+                font-size: 0.9em;
+            }
+            .teacher-name {
+                font-size: 0.9em;
+            }
+        }
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+            opacity: 0.8;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
-
-<body class="bg-gray-100 text-gray-800">
-
-  <!-- HEADER -->
-  <header class="bg-blue-700 text-white py-6 shadow-md">
-    <div class="max-w-5xl mx-auto px-4">
-      <h1 class="text-2xl font-bold">Daftar Penyerahan Naskah</h1>
-      <p class="opacity-90 text-sm">Kelas X – PSAS Ganjil 2025/2026</p>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Daftar Penyerahan Naskah, Kartu, Kisi-Kisi Soal</h1>
+            <p>Kelas X - Tahun Ajaran 2025</p>
+        </div>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th width="60">NO</th>
+                        <th>NAMA GURU</th>
+                        <th>MATA PELAJARAN</th>
+                        <th width="80">KLS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="number">1</td>
+                        <td class="teacher-list">
+                            <span class="teacher-name">Dewi Ainur Rohmah, S.Pd</span>
+                        </td>
+                        <td class="subject">PAI</td>
+                        <td class="class">X</td>
+                    </tr>
+                    <tr>
+                        <td class="number">2</td>
+                        <td class="teacher-list">
+                            <span class="teacher-name">Umiasih, S.Pd</span>
+                            <span class="teacher-name">Puji Rahayu</span>
+                        </td>
+                        <td class="subject">Pkn</td>
+                        <td class="class">X</td>
+                    </tr>
+                    <tr>
+                        <td class="number">3</td>
+                        <td class="teacher-list">
+                            <span class="teacher-name">Dra. Sih Puspitaning</span>
+                        </td>
+                        <td class="subject">Bahasa Indonesia</td>
+                        <td class="class">X</td>
+                    </tr>
+                    <tr>
+                        <td class="number">4</td>
+                        <td class="teacher-list">
+                            <span class="teacher-name">Rio Bagus Dirgantara, S.Pd., Gr.</span>
+                            <span class="teacher-name">Yunita Firmaningtyas, S.Pd</span>
+                        </td>
+                        <td class="subject">Matematika</td>
+                        <td class="class">X</td>
+                    </tr>
+                    <tr>
+                        <td class="number">5</td>
+                        <td class="teacher-list">
+                            <span class="teacher-name">Silvi Maharani Hilda, S.Pd</span>
+                        </td>
+                        <td class="subject">Sejarah Indonesia</td>
+                        <td class="class">X</td>
+                    </tr>
+                    <tr>
+                        <td class="number">6</td>
+                        <td class="teacher-list">
+                            <span class="teacher-name">Mohammad Arif Susiawan, S.Pd</span>
+                            <span class="teacher-name">Joko Irawan, S.Pd</span>
+                        </td>
+                        <td class="subject">Bahasa Inggris</td>
+                        <td class="class">X</td>
+                    </tr>
+                    <tr>
+                        <td class="number">7</td>
+                        <td class="teacher-list">
+                            <span class="teacher-name">Galih Kidung Wibowo, S.Sn</span>
+                            <span class="teacher-name">Wiyanto, S.Pd</span>
+                        </td>
+                        <td class="subject">Mulok</td>
+                        <td class="class">X</td>
+                    </tr>
+                    <tr>
+                        <td class="number">8</td>
+                        <td class="teacher-list">
+                            <span class="teacher-name">Cahya Mahardika, S.Pd</span>
+                        </td>
+                        <td class="subject">PJOK</td>
+                        <td class="class">X</td>
+                    </tr>
+                    <tr>
+                        <td class="number">9</td>
+                        <td class="teacher-list">
+                            <span class="teacher-name">Adha Q Mutawakilah, S.Pd</span>
+                            <span class="teacher-name">Uswatun Fatimah, S.E</span>
+                            <span class="teacher-name">Mirza Prastyo, S.Pd</span>
+                        </td>
+                        <td class="subject">Seni dan Prakarya</td>
+                        <td class="class">X</td>
+                    </tr>
+                    <tr>
+                        <td class="number">10</td>
+                        <td class="teacher-list">
+                            <span class="teacher-name">M. Irwan Maulana, S.Kom</span>
+                        </td>
+                        <td class="subject">Informatika</td>
+                        <td class="class">X</td>
+                    </tr>
+                    <tr>
+                        <td class="number">11</td>
+                        <td class="teacher-list">
+                            <span class="teacher-name">Dra. Sirkah Muawanah DWL</span>
+                        </td>
+                        <td class="subject">Biologi</td>
+                        <td class="class">X</td>
+                    </tr>
+                    <tr>
+                        <td class="number">12</td>
+                        <td class="teacher-list">
+                            <span class="teacher-name">Ervina Febriyanti, S.Pd</span>
+                            <span class="teacher-name">Dita Fitriani, S.Pd</span>
+                        </td>
+                        <td class="subject">Fisika</td>
+                        <td class="class">X</td>
+                    </tr>
+                    <tr>
+                        <td class="number">13</td>
+                        <td class="teacher-list">
+                            <span class="teacher-name">Lilik Istiyowati, S.T</span>
+                            <span class="teacher-name">Slamet Wahyono, S.Pd</span>
+                        </td>
+                        <td class="subject">Kimia</td>
+                        <td class="class">X</td>
+                    </tr>
+                    <tr>
+                        <td class="number">14</td>
+                        <td class="teacher-list">
+                            <span class="teacher-name">Dra. Subekti Rahayu</span>
+                            <span class="teacher-name">Titin Nursanti, S.Pd</span>
+                        </td>
+                        <td class="subject">Geografi</td>
+                        <td class="class">X</td>
+                    </tr>
+                    <tr>
+                        <td class="number">15</td>
+                        <td class="teacher-list">
+                            <span class="teacher-name">Muhamad Suharso,S.Pd</span>
+                            <span class="teacher-name">Alamsah, SE</span>
+                        </td>
+                        <td class="subject">Sosiologi</td>
+                        <td class="class">X</td>
+                    </tr>
+                    <tr>
+                        <td class="number">16</td>
+                        <td class="teacher-list">
+                            <span class="teacher-name">Siswo Hariningsih, S.Pd</span>
+                            <span class="teacher-name">Yuli Fitriani, S.Pd</span>
+                        </td>
+                        <td class="subject">Ekonomi</td>
+                        <td class="class">X</td>
+                    </tr>
+                    <tr>
+                        <td class="number">17</td>
+                        <td class="teacher-list">
+                            <span class="teacher-name">Drs. SY. Hadi</span>
+                            <span class="teacher-name">Mia Indriyani, S.Pd</span>
+                        </td>
+                        <td class="subject">BK/BP</td>
+                        <td class="class">X</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="footer">
+            <p>Daftar Penyerahan Naskah, Kartu, dan Kisi-Kisi Soal Kelas X</p>
+        </div>
     </div>
-  </header>
-
-  <!-- NAV -->
-  <nav class="bg-white shadow-sm py-3">
-    <div class="max-w-5xl mx-auto px-4 flex flex-wrap gap-3 text-sm md:text-base">
-      <a href="index.html" class="hover:underline">🏠 Beranda</a>
-      <a href="pengumpul.html" class="hover:underline">Pengumpul</a>
-
-      <span class="bg-yellow-400 text-gray-900 font-semibold px-4 py-1 rounded-full shadow">
-        📘 Kelas X
-      </span>
-    </div>
-  </nav>
-
-  <!-- MAIN -->
-  <main class="max-w-5xl mx-auto p-4 mt-6">
-
-    <div class="bg-white shadow-lg rounded-xl p-6">
-      <h2 class="text-xl font-bold mb-4">Daftar Penyerahan Naskah – Guru Mapel Kelas X</h2>
-
-      <div class="overflow-x-auto">
-        <table class="w-full border border-gray-300 rounded-lg overflow-hidden">
-          <thead class="bg-gray-200">
-            <tr>
-              <th class="border py-3 px-2 w-12">No</th>
-              <th class="border py-3 px-2 w-60">Nama Guru</th>
-              <th class="border py-3 px-2">Mata Pelajaran</th>
-              <th class="border py-3 px-2 w-20">Kelas</th>
-            </tr>
-          </thead>
-
-          <tbody>
-
-            <!-- 1 -->
-            <tr class="hover:bg-gray-50">
-              <td class="border py-3 px-2 text-center">1</td>
-              <td class="border py-3 px-2">Dewi Ainur Rohmah, S.Pd</td>
-              <td class="border py-3 px-2">PAI</td>
-              <td class="border py-3 px-2 text-center">X</td>
-            </tr>
-
-            <!-- 2 -->
-            <tr class="hover:bg-gray-50">
-              <td class="border py-3 px-2 text-center">2</td>
-              <td class="border py-3 px-2">
-                1. Umiasih, S.Pd <br>
-                2. Puji Rahayu
-              </td>
-              <td class="border py-3 px-2">PPKn</td>
-              <td class="border py-3 px-2 text-center">X</td>
-            </tr>
-
-            <!-- 3 -->
-            <tr class="hover:bg-gray-50">
-              <td class="border py-3 px-2 text-center">3</td>
-              <td class="border py-3 px-2">Dra. Sih Puspitaning</td>
-              <td class="border py-3 px-2">Bahasa Indonesia</td>
-              <td class="border py-3 px-2 text-center">X</td>
-            </tr>
-
-            <!-- 4 -->
-            <tr class="hover:bg-gray-50">
-              <td class="border py-3 px-2 text-center">4</td>
-              <td class="border py-3 px-2">
-                1. Rio Bagus Dirgantara, S.Pd., Gr. <br>
-                2. Yunita Firmaningtyas, S.Pd
-              </td>
-              <td class="border py-3 px-2">Matematika</td>
-              <td class="border py-3 px-2 text-center">X</td>
-            </tr>
-
-            <!-- 5 -->
-            <tr class="hover:bg-gray-50">
-              <td class="border py-3 px-2 text-center">5</td>
-              <td class="border py-3 px-2">Silvi Maharani Hilda, S.Pd</td>
-              <td class="border py-3 px-2">Sejarah Indonesia</td>
-              <td class="border py-3 px-2 text-center">X</td>
-            </tr>
-
-            <!-- 6 -->
-            <tr class="hover:bg-gray-50">
-              <td class="border py-3 px-2 text-center">6</td>
-              <td class="border py-3 px-2">
-                1. Mohammad Arif Susiawan, S.Pd <br>
-                2. Joko Irawan, S.Pd
-              </td>
-              <td class="border py-3 px-2">Bahasa Inggris</td>
-              <td class="border py-3 px-2 text-center">X</td>
-            </tr>
-
-            <!-- 7 -->
-            <tr class="hover:bg-gray-50">
-              <td class="border py-3 px-2 text-center">7</td>
-              <td class="border py-3 px-2">
-                1. Galih Kidung Wibowo, S.Sn <br>
-                2. Wiyanto, S.Pd
-              </td>
-              <td class="border py-3 px-2">Mulok</td>
-              <td class="border py-3 px-2 text-center">X</td>
-            </tr>
-
-            <!-- 8 -->
-            <tr class="hover:bg-gray-50">
-              <td class="border py-3 px-2 text-center">8</td>
-              <td class="border py-3 px-2">Cahya Mahardika, S.Pd</td>
-              <td class="border py-3 px-2">PJOK</td>
-              <td class="border py-3 px-2 text-center">X</td>
-            </tr>
-
-            <!-- 9 -->
-            <tr class="hover:bg-gray-50">
-              <td class="border py-3 px-2 text-center">9</td>
-              <td class="border py-3 px-2">
-                1. Adha Q. Mutawakilah, S.Pd <br>
-                2. Uswatun Fatimah, S.E <br>
-                3. Mirza Prastyo, S.Pd
-              </td>
-              <td class="border py-3 px-2">Seni dan Prakarya</td>
-              <td class="border py-3 px-2 text-center">X</td>
-            </tr>
-
-            <!-- 10 -->
-            <tr class="hover:bg-gray-50">
-              <td class="border py-3 px-2 text-center">10</td>
-              <td class="border py-3 px-2">M. Irwan Maulana, S.Kom</td>
-              <td class="border py-3 px-2">Informatika</td>
-              <td class="border py-3 px-2 text-center">X</td>
-            </tr>
-
-            <!-- 11 -->
-            <tr class="hover:bg-gray-50">
-              <td class="border py-3 px-2 text-center">11</td>
-              <td class="border py-3 px-2">Dra. Sirkah Muawanah DWL</td>
-              <td class="border py-3 px-2">Biologi</td>
-              <td class="border py-3 px-2 text-center">X</td>
-            </tr>
-
-            <!-- 12 -->
-            <tr class="hover:bg-gray-50">
-              <td class="border py-3 px-2 text-center">12</td>
-              <td class="border py-3 px-2">
-                1. Ervina Febriyanti, S.Pd <br>
-                2. Dita Fitriani, S.Pd
-              </td>
-              <td class="border py-3 px-2">Fisika</td>
-              <td class="border py-3 px-2 text-center">X</td>
-            </tr>
-
-            <!-- 13 -->
-            <tr class="hover:bg-gray-50">
-              <td class="border py-3 px-2 text-center">13</td>
-              <td class="border py-3 px-2">
-                1. Lilik Istiyowati, S.T <br>
-                2. Slamet Wahyono, S.Pd
-              </td>
-              <td class="border py-3 px-2">Kimia</td>
-              <td class="border py-3 px-2 text-center">X</td>
-            </tr>
-
-            <!-- 14 -->
-            <tr class="hover:bg-gray-50">
-              <td class="border py-3 px-2 text-center">14</td>
-              <td class="border py-3 px-2">
-                1. Dra. Subekti Rahayu <br>
-                2. Titin Nursanti, S.Pd
-              </td>
-              <td class="border py-3 px-2">Geografi</td>
-              <td class="border py-3 px-2 text-center">X</td>
-            </tr>
-
-            <!-- 15 -->
-            <tr class="hover:bg-gray-50">
-              <td class="border py-3 px-2 text-center">15</td>
-              <td class="border py-3 px-2">
-                1. Muhamad Suharso, S.Pd <br>
-                2. Alamsah, SE
-              </td>
-              <td class="border py-3 px-2">Sosiologi</td>
-              <td class="border py-3 px-2 text-center">X</td>
-            </tr>
-
-            <!-- 16 -->
-            <tr class="hover:bg-gray-50">
-              <td class="border py-3 px-2 text-center">16</td>
-              <td class="border py-3 px-2">
-                1. Siswo Hariningsih, S.Pd <br>
-                2. Yuli Fitriani, S.Pd
-              </td>
-              <td class="border py-3 px-2">Ekonomi</td>
-              <td class="border py-3 px-2 text-center">X</td>
-            </tr>
-
-            <!-- 17 -->
-            <tr class="hover:bg-gray-50">
-              <td class="border py-3 px-2 text-center">17</td>
-              <td class="border py-3 px-2">
-                1. Drs. SY. Hadi <br>
-                2. Mia Indriyani, S.Pd
-              </td>
-              <td class="border py-3 px-2">BK / BP</td>
-              <td class="border py-3 px-2 text-center">X</td>
-            </tr>
-
-          </tbody>
-        </table>
-      </div>
-
-    </div>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="mt-10 py-6 text-center text-sm text-gray-500">
-    © 2025 PSAS Ganjil | SMAN 1 Cluring
-  </footer>
-
 </body>
 </html>
