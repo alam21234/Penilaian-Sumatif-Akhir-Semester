@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Penyerahan Mapel</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #eef2f3;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background: #2c3e50;
+        padding: 15px;
+        text-align: center;
+        color: white;
+        font-size: 22px;
+        letter-spacing: 1px;
+    }
+
+    /* TAB MENU */
+    .tabs {
+        display: flex;
+        justify-content: center;
+        background: #34495e;
+    }
+
+    .tab-btn {
+        padding: 14px 25px;
+        cursor: pointer;
+        background: #34495e;
+        color: white;
+        border: none;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    .tab-btn:hover,
+    .tab-btn.active {
+        background: #2c3e50;
+    }
+
+    .content-section {
+        display: none;
+        padding: 20px;
+    }
+
+    .active-section {
+        display: block;
+    }
+
+    /* TABLE STYLE */
+    .table-container {
+        overflow-x: auto;
+        background: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        margin-bottom: 30px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 800px;
+    }
+
+    th {
+        background: #2c3e50;
+        color: white;
+        padding: 10px;
+        text-align: left;
+    }
+
+    td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        vertical-align: top;
+    }
+
+    tr:hover {
+        background: #f7f7f7;
+    }
+
+    .nomor {
+        width: 40px;
+        text-align: center;
+    }
+
+    .footer-ttd {
+        text-align: right;
+        margin-top: 40px;
+        font-size: 16px;
+    }
+
+    .bold {
+        font-weight: bold;
+    }
+</style>
+
+<script>
+function openTab(tabName) {
+    document.querySelectorAll(".content-section").forEach(sec => sec.classList.remove("active-section"));
+    document.getElementById(tabName).classList.add("active-section");
+
+    document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active"));
+    document.getElementById("btn-" + tabName).classList.add("active");
+}
+</script>
+
+</head>
+<body>
+
+<header>
+    DASHBOARD PENYERAHAN NASKAH – KELAS X • XI • XII
+</header>
+
+<!-- TAB MENU -->
+<div class="tabs">
+    <button id="btn-x" class="tab-btn active" onclick="openTab('x')">Kelas X</button>
+    <button id="btn-xi" class="tab-btn" onclick="openTab('xi')">Kelas XI</button>
+    <button id="btn-xii" class="tab-btn" onclick="openTab('xii')">Kelas XII</button>
+</div>
+
+<!-- ======================== KELAS X ======================== -->
+<div id="x" class="content-section active-section">
+    <h2>DAFTAR PENYERAHAN KELAS X</h2>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th class="nomor">NO</th>
+                    <th>NAMA GURU</th>
+                    <th>MATA PELAJARAN</th>
+                    <th>KLS</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <!-- === DATA KELAS X === -->
+                <tr><td class="nomor">1</td><td>Dewi Ainur Rohmah, S.Pd</td><td>PAI</td><td>X</td></tr>
+
+                <tr><td class="nomor">2</td>
+                    <td>1. Umiasih, S.Pd<br>2. Puji Rahayu</td>
+                    <td>Pkn</td><td>X</td></tr>
+
+                <tr><td class="nomor">3</td><td>Dra. Sih Puspitaning</td><td>Bahasa Indonesia</td><td>X</td></tr>
+
+                <tr><td class="nomor">4</td>
+                    <td>1. Rio Bagus Dirgantara, S.Pd., Gr<br>2. Yunita Firmaningtyas, S.Pd</td>
+                    <td>Matematika</td><td>X</td></tr>
+
+                <tr><td class="nomor">5</td><td>Silvi Maharani Hilda, S.Pd</td><td>Sejarah Indonesia</td><td>X</td></tr>
+
+                <tr><td class="nomor">6</td>
+                    <td>1. Mohammad Arif Susiawan, S.Pd<br>2. Joko Irawan, S.Pd</td>
+                    <td>Bahasa Inggris</td><td>X</td></tr>
+
+                <tr><td class="nomor">7</td>
+                    <td>1. Galih Kidung Wibowo, S.Sn<br>2. Wiyanto, S.Pd</td>
+                    <td>Mulok</td><td>X</td></tr>
+
+                <tr><td class="nomor">8</td><td>Cahya Mahardika, S.Pd</td><td>PJOK</td><td>X</td></tr>
+
+                <tr><td class="nomor">9</td>
+                    <td>1. Adha Q Mutawakilah, S.Pd<br>2. Uswatun Fatimah, S.E<br>3. Mirza Prastyo, S.Pd</td>
+                    <td>Seni dan Prakarya</td><td>X</td></tr>
+
+                <tr><td class="nomor">10</td><td>M. Irwan Maulana, S.Kom</td><td>Informatika</td><td>X</td></tr>
+
+                <tr><td class="nomor">11</td><td>Dra. Sirkah Muawanah DWL</td><td>Biologi</td><td>X</td></tr>
+
+                <tr><td class="nomor">12</td>
+                    <td>1. Ervina Febriyanti, S.Pd<br>2. Dita Fitriani, S.Pd</td>
+                    <td>Fisika</td><td>X</td></tr>
+
+                <tr><td class="nomor">13</td>
+                    <td>1. Lilik Istiyowati, S.T<br>2. Slamet Wahyono, S.Pd</td>
+                    <td>Kimia</td><td>X</td></tr>
+
+                <tr><td class="nomor">14</td>
+                    <td>1. Dra. Subekti Rahayu<br>2. Titin Nursanti, S.Pd</td>
+                    <td>Geografi</td><td>X</td></tr>
+
+                <tr><td class="nomor">15</td>
+                    <td>1. Muhamad Suharso, S.Pd<br>2. Alamsah, SE</td>
+                    <td>Sosiologi</td><td>X</td></tr>
+
+                <tr><td class="nomor">16</td>
+                    <td>1. Siswo Hariningsih, S.Pd<br>2. Yuli Fitriani, S.Pd</td>
+                    <td>Ekonomi</td><td>X</td></tr>
+
+                <tr><td class="nomor">17</td>
+                    <td>1. Drs. SY. Hadi<br>2. Mia Indriyani, S.Pd</td>
+                    <td>BK/BP</td><td>X</td></tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- ======================== KELAS XI ======================== -->
+<div id="xi" class="content-section">
+    <h2>DAFTAR PENYERAHAN KELAS XI</h2>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th class="nomor">NO</th>
+                    <th>NAMA GURU</th>
+                    <th>MATA PELAJARAN</th>
+                    <th>KLS</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <!-- === DATA KELAS XI (sudah disusun sebelumnya) === -->
+                <tr><td class="nomor">1</td><td>Imam Hadi Taufik H, S.Pd</td><td>PAI</td><td>XI</td></tr>
+
+                <tr><td class="nomor">2</td><td>Umiasih, S.Pd</td><td>Pendidikan Pancasila</td><td>XI</td></tr>
+
+                <tr><td class="nomor">3</td><td>Viola Lutfy Sagita, S.Pd</td><td>Bahasa Indonesia</td><td>XI</td></tr>
+
+                <tr><td class="nomor">4</td>
+                    <td>1. Aris Riyanto, S.Pd<br>2. Rini Asih, S.Pd</td>
+                    <td>Matematika Umum</td><td>XI</td></tr>
+
+                <tr><td class="nomor">5</td>
+                    <td>1. Yunita Firmaningtyas, S.Pd<br>2. Dwi Indah Lestari, S.Pd</td>
+                    <td>Matematika Lanjut</td><td>XI</td></tr>
+
+                <tr><td class="nomor">6</td><td>Muhammad As'adi, S.Pd</td><td>Bahasa Inggris</td><td>XI</td></tr>
+
+                <tr><td class="nomor">7</td>
+                    <td>1. Mohammad Arif Susiawan, S.Pd<br>2. Shiendaa Setyawatie, S.Pd</td>
+                    <td>Bahasa Inggris Lanjut</td><td>XI</td></tr>
+
+                <tr><td class="nomor">8</td><td>Drs. Bagus Dwi Suasono, M.Pd</td><td>PJOK</td><td>XI</td></tr>
+
+                <tr><td class="nomor">9</td>
+                    <td>1. Ritwan Junianto, S.Pd<br>2. Yuli Fitriani, S.Pd</td>
+                    <td>Sejarah</td><td>XI</td></tr>
+
+                <tr><td class="nomor">10</td><td>Mirza Prastyo, S.Pd</td><td>Seni Rupa</td><td>XI</td></tr>
+
+                <tr><td class="nomor">11</td><td>Ervina Febriyanti, S.Pd</td><td>Fisika</td><td>XI</td></tr>
+
+                <tr><td class="nomor">12</td><td>Lilik Istiyowati, S.T</td><td>Kimia</td><td>XI</td></tr>
+
+                <tr><td class="nomor">13</td>
+                    <td>1. Drs Sumardami<br>2. Imam Afandi, S.Pd</td>
+                    <td>Biologi</td><td>XI</td></tr>
+
+                <tr><td class="nomor">14</td><td>Silvi Maharani Hilda, S.Pd</td><td>Sosiologi</td><td>XI</td></tr>
+
+                <tr><td class="nomor">15</td>
+                    <td>1. Siti Rofiah, S.Pd<br>2. Alamsah, S.E</td>
+                    <td>Ekonomi</td><td>XI</td></tr>
+
+                <tr><td class="nomor">16</td><td>Titin Nursanti, S.Pd</td><td>Geografi</td><td>XI</td></tr>
+
+                <tr><td class="nomor">17</td><td>Joko Irawan, S.Pd</td><td>Bahasa Jepang</td><td>XI</td></tr>
+
+                <tr><td class="nomor">18</td><td>Kristin Setiyowati, S.Kom, Gr</td><td>Informatika</td><td>XI</td></tr>
+
+                <tr><td class="nomor">19</td><td>Uswatun Fatimah, S.E</td><td>Prakarya dan Kewirausahaan</td><td>XI</td></tr>
+
+                <tr><td class="nomor">20</td>
+                    <td>1. Galih Kidung Wibowo, S.Sn<br>2. Danik Suselowati, S.Pd</td>
+                    <td>Mulok</td><td>XI</td></tr>
+
+                <tr><td class="nomor">21</td>
+                    <td>1. Andis Dwi Saputro, S.Sos.I<br>2. Agus Winaryanto, S.Pd.H</td>
+                    <td>BK/BP</td><td>XI</td></tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- ======================== KELAS XII ======================== -->
+<div id="xii" class="content-section">
+    <h2>DAFTAR PENYERAHAN KELAS XII</h2>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th class="nomor">NO</th>
+                    <th>NAMA GURU</th>
+                    <th>MATA PELAJARAN</th>
+                    <th>KLS</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <!-- === DATA XII (utuh sesuai input Anda) === -->
+                <tr><td class="nomor">1</td><td>Drs. Suroso</td><td>PAI</td><td>XII</td></tr>
+
+                <tr><td class="nomor">2</td><td>Dra. Puji Rahayu</td><td>Pendidikan Pancasila</td><td>XII</td></tr>
+
+                <tr><td class="nomor">3</td><td>Endry Ernaning Tyas Tuty, S.Pd</td><td>Bahasa Indonesia</td><td>XII</td></tr>
+
+                <tr><td class="nomor">4</td>
+                    <td>1. Agus Supriyadi, S.Pd<br>2. Ali Muthohar, S.Pd<br>3. Wirdah Pramita Nasrudin, S.Pd</td>
+                    <td>Matematika</td><td>XII</td></tr>
+
+                <tr><td class="nomor">5</td>
+                    <td>1. Rini Asih, S.Pd<br>2. Dwi Indah Lestari, S.Pd</td>
+                    <td>Matematika Lanjut</td><td>XII</td></tr>
+
+                <tr><td class="nomor">6</td><td>Drs. Misnan</td><td>Bahasa Inggris</td><td>XII</td></tr>
+
+                <tr><td class="nomor">7</td><td>Drs. Makhrus</td><td>PJOK</td><td>XII</td></tr>
+
+                <tr><td class="nomor">8</td><td>Ritwan Junianto, S.Pd</td><td>Sejarah</td><td>XII</td></tr>
+
+                <tr><td class="nomor">9</td><td>Wiyanto, S.Pd</td><td>Seni Tari</td><td>XII</td></tr>
+
+                <tr><td class="nomor">10</td><td>Tina Wahyu Lestari, S.Pd</td><td>Fisika</td><td>XII</td></tr>
+
+                <tr><td class="nomor">11</td><td>Slamet Wahyono, S.Pd</td><td>Kimia</td><td>XII</td></tr>
+
+                <tr><td class="nomor">12</td><td>Drs. Sumardami</td><td>Biologi</td><td>XII</td></tr>
+
+                <tr><td class="nomor">13</td><td>Moh. Suharso, S.Pd</td><td>Sosiologi</td><td>XII</td></tr>
+
+                <tr><td class="nomor">14</td><td>Siti Rofiah, S.Pd</td><td>Ekonomi</td><td>XII</td></tr>
+
+                <tr><td class="nomor">15</td><td>Dra. Subekti Rahayu</td><td>Geografi</td><td>XII</td></tr>
+
+                <tr><td class="nomor">16</td><td>Joko Irawan, S.Pd</td><td>Bahasa Jepang</td><td>XII</td></tr>
+
+                <tr><td class="nomor">17</td><td>Slamet Hariyadi, S.Kom</td><td>Informatika</td><td>XII</td></tr>
+
+                <tr><td class="nomor">18</td><td>Adha Qiftiyatul M, S.Pd</td><td>Prakarya dan Kewirausahaan</td><td>XII</td></tr>
+
+                <tr><td class="nomor">19</td><td>Shienda Setyawatie, S.Pd</td><td>Bahasa Inggris Tingkat Lanjut</td><td>XII</td></tr>
+
+                <tr><td class="nomor">20</td><td>Danik Suselowati, S.Pd</td><td>Mulok</td><td>XII</td></tr>
+
+                <tr><td class="nomor">21</td>
+                    <td>1. Andis Dwi Saputro, S.Pd<br>2. Mia Indriyani, S.Pd</td>
+                    <td>BK/BP</td><td>XII</td></tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="footer-ttd">
+        <p>Cluring, 7 November 2025</p>
+        <p class="bold">Kepala SMA Negeri 1 Cluring</p>
+        <br><br><br>
+        <p class="bold">Helmi, S.Pd., M.Si</p>
+        <p>NIP. 19750626 200312 2 011</p>
+    </div>
+
+</div>
+
+</body>
+</html>
