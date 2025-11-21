@@ -1,162 +1,213 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daftar Penyerahan Kelas XII</title>
-<style>
-    body {
-        font-family: "Segoe UI", sans-serif;
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(135deg, #4b1aff, #1a9fff);
-        min-height: 100vh;
-        color: white;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Penyerahan Naskah — Kelas XII</title>
 
-    header {
-        padding: 25px;
-        text-align: center;
-        font-size: 28px;
-        font-weight: 700;
-        letter-spacing: 1px;
-        background: rgba(0,0,0,0.2);
-        backdrop-filter: blur(8px);
-    }
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    .container {
-        margin: 30px auto;
-        background: white;
-        color: #333;
-        width: 95%;
-        max-width: 1100px;
-        padding: 25px;
-        border-radius: 14px;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-    }
+    <style>
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #1e1e2f, #14576c, #0d9488);
+            background-size: 300% 300%;
+            animation: gradientMove 12s ease infinite;
+            color: white;
+        }
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 15px;
-        font-size: 15px;
-    }
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-    th {
-        background: #4b1aff;
-        color: white;
-        padding: 10px;
-        font-size: 16px;
-        letter-spacing: 0.5px;
-    }
+        /* NAVBAR */
+        nav {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(12px);
+            padding: 12px 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            z-index: 50;
+        }
 
-    td {
-        border: 1px solid #ccc;
-        padding: 10px;
-    }
+        nav .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
-    tr:nth-child(even) {
-        background: #f5f5f5;
-    }
+        nav .logo-area img {
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+        }
 
-    tr:hover {
-        background: #e3e9ff;
-    }
+        nav .logo-area span {
+            font-size: 19px;
+            font-weight: 600;
+        }
 
-    .footer {
-        margin-top: 30px;
-        text-align: right;
-        font-size: 15px;
-        color: #fff;
-    }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 18px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
 
-    .footer strong {
-        font-size: 17px;
-    }
-</style>
+        nav a:hover {
+            color: #facc15;
+        }
+
+        /* TITLE */
+        .container {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #fcd34d;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            opacity: 0.9;
+            font-size: 17px;
+        }
+
+        /* TABLE */
+        .table-wrapper {
+            margin: 40px auto;
+            max-width: 1100px;
+            background: rgba(255,255,255,0.08);
+            padding: 25px;
+            border-radius: 18px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: white;
+        }
+
+        th, td {
+            padding: 12px 10px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+
+        th {
+            background: rgba(255,255,255,0.12);
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        tr:hover {
+            background: rgba(255,255,255,0.10);
+            transition: 0.25s;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            opacity: 0.7;
+            margin-top: 40px;
+        }
+    </style>
 </head>
+
 <body>
 
-<header>
-    📘 DAFTAR PENYERAHAN SOAL KELAS XII – PSAS GANJIL 2025/2026
-</header>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo-area">
+            <img src="https://i.ibb.co.com/Q7C0TZKh/SMAN1-Cluring-emblem.png">
+            <span>PSAS 2025/2026</span>
+        </div>
 
-<div class="container">
-    <table>
-        <tr>
-            <th>NO</th>
-            <th>NAMA GURU</th>
-            <th>MATA PELAJARAN</th>
-            <th>KLS</th>
-        </tr>
+        <div>
+            <a href="index.html">Beranda</a>
+            <a href="dashboard-penyerahan.html">Dashboard</a>
+            <a href="daftar-penyerahan-x.html">Kelas X</a>
+            <a href="daftar-penyerahan-xi.html">Kelas XI</a>
+            <a href="daftar-penyerahan-xii.html">Kelas XII</a>
+        </div>
+    </nav>
 
-        <tr><td>1</td><td>Drs. Suroso</td><td>PAI</td><td>XII</td></tr>
-        <tr><td>2</td><td>Dra. Puji Rahayu</td><td>Pendidikan Pancasila</td><td>XII</td></tr>
-        <tr><td>3</td><td>Endry Ernaning Tyas Tuty, S.Pd</td><td>Bahasa Indonesia</td><td>XII</td></tr>
-
-        <tr>
-            <td>4</td>
-            <td>
-                1. Agus Supriyadi, S.Pd<br>
-                2. Ali Muthohar, S.Pd<br>
-                3. Wirdah Pramita Nasrudin, S.Pd
-            </td>
-            <td>Matematika</td>
-            <td>XII</td>
-        </tr>
-
-        <tr>
-            <td>5</td>
-            <td>
-                1. Rini Asih, S.Pd<br>
-                2. Dwi Indah Lestari, S.Pd
-            </td>
-            <td>Matematika Lanjut</td>
-            <td>XII</td>
-        </tr>
-
-        <tr><td>6</td><td>Drs. Misnan</td><td>Bahasa Inggris</td><td>XII</td></tr>
-        <tr><td>7</td><td>Drs. Makhrus</td><td>PJOK</td><td>XII</td></tr>
-        <tr><td>8</td><td>Ritwan Junianto, S.Pd</td><td>Sejarah</td><td>XII</td></tr>
-        <tr><td>9</td><td>Wiyanto, S.Pd</td><td>Seni Tari</td><td>XII</td></tr>
-        <tr><td>10</td><td>Tina Wahyu Lestari, S.Pd</td><td>Fisika</td><td>XII</td></tr>
-        <tr><td>11</td><td>Slamet Wahyono, S.Pd</td><td>Kimia</td><td>XII</td></tr>
-
-        <tr>
-            <td>12</td>
-            <td>Drs. Sumardami</td>
-            <td>Biologi</td>
-            <td>XII</td>
-        </tr>
-
-        <tr><td>13</td><td>Moh. Suharso, S.Pd</td><td>Sosiologi</td><td>XII</td></tr>
-        <tr><td>14</td><td>Siti Rofiah, S.Pd</td><td>Ekonomi</td><td>XII</td></tr>
-        <tr><td>15</td><td>Dra. Subekti Rahayu</td><td>Geografi</td><td>XII</td></tr>
-        <tr><td>16</td><td>Joko Irawan, S.Pd</td><td>Bahasa Jepang</td><td>XII</td></tr>
-        <tr><td>17</td><td>Slamet Hariyadi, S.Kom</td><td>Informatika</td><td>XII</td></tr>
-        <tr><td>18</td><td>Adha Qiftiyatul M, S.Pd</td><td>Prakarya dan Kewirausahaan</td><td>XII</td></tr>
-        <tr><td>19</td><td>Shienda Setyawatie, S.Pd</td><td>Bahasa Inggris Tingkat Lanjut</td><td>XII</td></tr>
-        <tr><td>20</td><td>Danik Suselowati, S.Pd</td><td>Mulok</td><td>XII</td></tr>
-
-        <tr>
-            <td>21</td>
-            <td>
-                1. Andis Dwi Saputro, S.Pd<br>
-                2. Mia Indriyani, S.Pd
-            </td>
-            <td>BK/BP</td>
-            <td>XII</td>
-        </tr>
-
-    </table>
-
-    <div class="footer">
-        Cluring, 7 November 2025<br>
-        <strong>Kepala SMA Negeri 1 Cluring</strong><br><br>
-        Helmi, S.Pd., M.Si<br>
-        NIP. 19750626 200312 2 011
+    <div class="container">
+        <h1>DAFTAR PENYERAHAN NASKAH — KELAS XII</h1>
+        <p class="subtitle">Guru dan Mata Pelajaran Kelas XII</p>
     </div>
-</div>
+
+    <div class="table-wrapper">
+        <table>
+            <tr>
+                <th>NO</th>
+                <th>NAMA GURU</th>
+                <th>MATA PELAJARAN</th>
+                <th>KLS</th>
+            </tr>
+
+            <tr><td>1</td><td>Drs. Suroso.</td><td>PAI</td><td>XII</td></tr>
+            <tr><td>2</td><td>Dra. Puji Rahayu</td><td>Pendidikan Pancasila</td><td>XII</td></tr>
+            <tr><td>3</td><td>Endry Ernaning Tyas Tuty, S.Pd</td><td>Bahasa Indonesia</td><td>XII</td></tr>
+
+            <tr><td>4</td><td>Agus Supriyadi, S.Pd</td><td rowspan="3">Matematika</td><td>XII</td></tr>
+            <tr><td>5</td><td>Ali Muthohar, S.Pd</td><td>XII</td></tr>
+            <tr><td>6</td><td>Wirdah Pramita Nasrudin,S.Pd.</td><td>XII</td></tr>
+
+            <tr><td>7</td><td>Rini Asih, S.Pd</td><td rowspan="2">Matematika Lanjut</td><td>XII</td></tr>
+            <tr><td>8</td><td>Dwi Indah Lestari, S.Pd</td><td>XII</td></tr>
+
+            <tr><td>9</td><td>Drs. Misnan</td><td>Bahasa Inggris</td><td>XII</td></tr>
+
+            <tr><td>10</td><td>Drs. Makhrus</td><td>PJOK</td><td>XII</td></tr>
+
+            <tr><td>11</td><td>Ritwan Junianto, S.Pd</td><td>Sejarah</td><td>XII</td></tr>
+
+            <tr><td>12</td><td>Wiyanto, S.Pd</td><td>Seni Tari</td><td>XII</td></tr>
+
+            <tr><td>13</td><td>Tina Wahyu Lestari, S.Pd</td><td>Fisika</td><td>XII</td></tr>
+
+            <tr><td>14</td><td>Slamet Wahyono, S.Pd</td><td>Kimia</td><td>XII</td></tr>
+
+            <tr><td>15</td><td>Drs. Sumardami</td><td>Biologi</td><td>XII</td></tr>
+
+            <tr><td>16</td><td>Moh. Suharso, S.Pd</td><td>Sosiologi</td><td>XII</td></tr>
+
+            <tr><td>17</td><td>Siti Rofiah, S.Pd</td><td>Ekonomi</td><td>XII</td></tr>
+
+            <tr><td>18</td><td>Dra. Subekti Rahayu</td><td>Geografi</td><td>XII</td></tr>
+
+            <tr><td>19</td><td>Joko Irawan, S.Pd</td><td>Bahasa Jepang</td><td>XII</td></tr>
+
+            <tr><td>20</td><td>Slamet Hariyadi, S.Kom</td><td>Informatika</td><td>XII</td></tr>
+
+            <tr><td>21</td><td>Adha Qiftiyatul M, S.Pd</td><td>Prakarya dan Kewirausahaan</td><td>XII</td></tr>
+
+            <tr><td>22</td><td>Sheinda Setyawatie, S.Pd</td><td>Bahasa Inggris tingkat lanjut</td><td>XII</td></tr>
+
+            <tr><td>23</td><td>Danik Suselowati, S.Pd</td><td>Mulok</td><td>XII</td></tr>
+
+            <tr><td>24</td><td>Andis Dwi Saputro, S.Pd</td><td rowspan="2">BK/BP</td><td>XII</td></tr>
+            <tr><td>25</td><td>Mia Indriyani, S.Pd</td><td>XII</td></tr>
+
+        </table>
+    </div>
+
+    <footer>
+        © 2025 SMA Negeri 1 Cluring — Sistem Penyerahan Naskah PSAS
+    </footer>
 
 </body>
 </html>
