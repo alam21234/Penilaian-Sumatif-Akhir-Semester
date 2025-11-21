@@ -1,171 +1,217 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daftar Penyerahan Kelas XI</title>
-<style>
-    body {
-        font-family: "Segoe UI", sans-serif;
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(135deg, #4b1aff, #1a9fff);
-        min-height: 100vh;
-        color: white;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Penyerahan Naskah — Kelas XI</title>
 
-    header {
-        padding: 25px;
-        text-align: center;
-        font-size: 28px;
-        font-weight: 700;
-        letter-spacing: 1px;
-        background: rgba(0,0,0,0.2);
-        backdrop-filter: blur(8px);
-    }
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    .container {
-        margin: 30px auto;
-        background: white;
-        color: #333;
-        width: 95%;
-        max-width: 1100px;
-        padding: 25px;
-        border-radius: 14px;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-    }
+    <style>
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #1e1e2f, #14576c, #0d9488);
+            background-size: 300% 300%;
+            animation: gradientMove 12s ease infinite;
+            color: white;
+        }
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 15px;
-        font-size: 15px;
-    }
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-    th {
-        background: #4b1aff;
-        color: white;
-        padding: 10px;
-        font-size: 16px;
-        letter-spacing: 0.5px;
-    }
+        /* NAVBAR */
+        nav {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(12px);
+            padding: 12px 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            z-index: 50;
+        }
 
-    td {
-        border: 1px solid #ccc;
-        padding: 10px;
-    }
+        nav .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
-    tr:nth-child(even) {
-        background: #f5f5f5;
-    }
+        nav .logo-area img {
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+        }
 
-    tr:hover {
-        background: #e3e9ff;
-    }
+        nav .logo-area span {
+            font-size: 19px;
+            font-weight: 600;
+        }
 
-    .footer {
-        margin-top: 30px;
-        text-align: right;
-        font-size: 15px;
-        color: #fff;
-    }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 18px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
 
-    .footer strong {
-        font-size: 17px;
-    }
-</style>
+        nav a:hover {
+            color: #facc15;
+        }
+
+        /* TITLE */
+        .container {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #fcd34d;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            opacity: 0.9;
+            font-size: 17px;
+        }
+
+        /* TABLE */
+        .table-wrapper {
+            margin: 40px auto;
+            max-width: 1100px;
+            background: rgba(255,255,255,0.08);
+            padding: 25px;
+            border-radius: 18px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: white;
+        }
+
+        th, td {
+            padding: 12px 10px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+
+        th {
+            background: rgba(255,255,255,0.12);
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        tr:hover {
+            background: rgba(255,255,255,0.10);
+            transition: 0.25s;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            opacity: 0.7;
+            margin-top: 40px;
+        }
+    </style>
 </head>
+
 <body>
 
-<header>
-    📘 DAFTAR PENYERAHAN SOAL KELAS XI – PSAS GANJIL 2025/2026
-</header>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo-area">
+            <img src="https://i.ibb.co.com/Q7C0TZKh/SMAN1-Cluring-emblem.png">
+            <span>PSAS 2025/2026</span>
+        </div>
 
-<div class="container">
-    <table>
-        <tr>
-            <th>NO</th>
-            <th>NAMA GURU</th>
-            <th>MATA PELAJARAN</th>
-            <th>KLS</th>
-        </tr>
+        <div>
+            <a href="index.html">Beranda</a>
+            <a href="dashboard-penyerahan.html">Dashboard</a>
+            <a href="daftar-penyerahan-x.html">Kelas X</a>
+            <a href="daftar-penyerahan-xi.html">Kelas XI</a>
+            <a href="daftar-penyerahan-xii.html">Kelas XII</a>
+        </div>
+    </nav>
 
-        <tr><td>1</td><td>Imam Hadi Taufik H, S.Pd</td><td>PAI</td><td>XI</td></tr>
-        <tr><td>2</td><td>Umiasih, S.Pd</td><td>Pendidikan Pancasila</td><td>XI</td></tr>
-        <tr><td>3</td><td>Viola Lutfy Sagita, S.Pd</td><td>Bahasa Indonesia</td><td>XI</td></tr>
-
-        <tr>
-            <td>4</td>
-            <td>1. Aris Riyanto, S.Pd<br>2. Rini Asih, S.Pd</td>
-            <td>Matematika Umum</td><td>XI</td>
-        </tr>
-
-        <tr>
-            <td>5</td>
-            <td>1. Yunita Firmaningtyas, S.Pd<br>2. Dwi Indah Lestari, S.Pd</td>
-            <td>Matematika Lanjut</td><td>XI</td>
-        </tr>
-
-        <tr><td>6</td><td>Muhammad As'adi, S.Pd</td><td>Bahasa Inggris</td><td>XI</td></tr>
-
-        <tr>
-            <td>7</td>
-            <td>1. Mohammad Arif Susiawan, S.Pd<br>2. Shienda Setyawatie, S.Pd</td>
-            <td>Bahasa Inggris Lanjut</td><td>XI</td>
-        </tr>
-
-        <tr><td>8</td><td>Drs. Bagus Dwi Suasono, M.Pd</td><td>PJOK</td><td>XI</td></tr>
-
-        <tr>
-            <td>9</td>
-            <td>1. Ritwan Junianto, S.Pd<br>2. Yuli Fitriani, S.Pd</td>
-            <td>Sejarah</td><td>XI</td>
-        </tr>
-
-        <tr><td>10</td><td>Mirza Prastyo, S.Pd</td><td>Seni Rupa</td><td>XI</td></tr>
-        <tr><td>11</td><td>Ervina Febriyanti, S.Pd</td><td>Fisika</td><td>XI</td></tr>
-        <tr><td>12</td><td>Lilik Istiyowati, S.T</td><td>Kimia</td><td>XI</td></tr>
-
-        <tr>
-            <td>13</td>
-            <td>1. Drs Sumardami<br>2. Imam Afandi, S.Pd</td>
-            <td>Biologi</td><td>XI</td>
-        </tr>
-
-        <tr><td>14</td><td>Silvi Maharani Hilda, S.Pd</td><td>Sosiologi</td><td>XI</td></tr>
-
-        <tr>
-            <td>15</td>
-            <td>1. Siti Rofiah, S.Pd<br>2. Alamsah, S.E</td>
-            <td>Ekonomi</td><td>XI</td>
-        </tr>
-
-        <tr><td>16</td><td>Titin Nursanti, S.Pd</td><td>Geografi</td><td>XI</td></tr>
-        <tr><td>17</td><td>Joko Irawan, S.Pd</td><td>Bahasa Jepang</td><td>XI</td></tr>
-        <tr><td>18</td><td>Kristin Setiyowati, S.Kom, Gr</td><td>Informatika</td><td>XI</td></tr>
-        <tr><td>19</td><td>Uswatun Fatimah, S.E</td><td>Prakarya & Kewirausahaan</td><td>XI</td></tr>
-
-        <tr>
-            <td>20</td>
-            <td>Galih Kidung Wibowo, S.Sn<br>Danik Suselowati, S.Pd</td>
-            <td>Mulok</td><td>XI</td>
-        </tr>
-
-        <tr>
-            <td>21</td>
-            <td>1. Andis Dwi Saputro, S.Sos.I<br>2. Agus Winaryanto, S.Pd.H</td>
-            <td>BK/BP</td><td>XI</td>
-        </tr>
-
-    </table>
-
-    <div class="footer">
-        Cluring, 7 November 2025<br>
-        <strong>Kepala SMA Negeri 1 Cluring</strong><br><br>
-        Helmi, S.Pd., M.Si<br>
-        NIP. 19750626 200312 2 011
+    <div class="container">
+        <h1>DAFTAR PENYERAHAN NASKAH — KELAS XI</h1>
+        <p class="subtitle">Guru dan Mata Pelajaran Kelas XI</p>
     </div>
-</div>
+
+    <div class="table-wrapper">
+        <table>
+            <tr>
+                <th>NO</th>
+                <th>NAMA GURU</th>
+                <th>MATA PELAJARAN</th>
+                <th>KLS</th>
+            </tr>
+
+            <tr><td>1</td><td>Imam Hadi Taufik H, S.Pd</td><td>PAI</td><td>XI</td></tr>
+            <tr><td>2</td><td>Umiasih, S.Pd</td><td>Pendidikan Pancasila</td><td>XI</td></tr>
+            <tr><td>3</td><td>Viola Lutfy Sagita, S.Pd</td><td>Bahasa Indonesia</td><td>XI</td></tr>
+
+            <tr><td>4</td><td>Aris Riyanto, S.Pd</td><td rowspan="2">Matematika Umum</td><td>XI</td></tr>
+            <tr><td>5</td><td>Rini Asih, S.Pd</td><td>XI</td></tr>
+
+            <tr><td>6</td><td>Yunita Firmaningtyas, S.Pd</td><td rowspan="2">Matematika Lanjut</td><td>XI</td></tr>
+            <tr><td>7</td><td>Dwi Indah Lestari, S.Pd</td><td>XI</td></tr>
+
+            <tr><td>8</td><td>Muhammad As'adi, S.Pd</td><td>Bahasa Inggris</td><td>XI</td></tr>
+
+            <tr><td>9</td><td>Mohammad Arif Susiawan, S.Pd</td><td rowspan="2">Bahasa Inggris Lanjut</td><td>XI</td></tr>
+            <tr><td>10</td><td>Sheinda Setyawatie, S.Pd</td><td>XI</td></tr>
+
+            <tr><td>11</td><td>Drs. Bagus Dwi Suasono, M.Pd</td><td>PJOK</td><td>XI</td></tr>
+
+            <tr><td>12</td><td>Ritwan Junianto, S.Pd.</td><td rowspan="2">Sejarah</td><td>XI</td></tr>
+            <tr><td>13</td><td>Yuli Fitriani, S.Pd</td><td>XI</td></tr>
+
+            <tr><td>14</td><td>Mirza Prastyo, S.Pd.</td><td>Seni Rupa</td><td>XI</td></tr>
+
+            <tr><td>15</td><td>Ervina Febriyanti, S.Pd</td><td>Fisika</td><td>XI</td></tr>
+
+            <tr><td>16</td><td>Lilik Istiyowati, S.T</td><td>Kimia</td><td>XI</td></tr>
+
+            <tr><td>17</td><td>Drs Sumardami</td><td rowspan="2">Biologi</td><td>XI</td></tr>
+            <tr><td>18</td><td>Imam Afandi, S.Pd</td><td>XI</td></tr>
+
+            <tr><td>19</td><td>Silvi Maharani Hilda, S.Pd</td><td>Sosiologi</td><td>XI</td></tr>
+
+            <tr><td>20</td><td>Siti Rofiah, S.Pd</td><td rowspan="2">Ekonomi</td><td>XI</td></tr>
+            <tr><td>21</td><td>Alamsah, S.E</td><td>XI</td></tr>
+
+            <tr><td>22</td><td>Titin Nursanti, S.Pd</td><td>Geografi</td><td>XI</td></tr>
+
+            <tr><td>23</td><td>Joko Irawan, S.Pd</td><td>Bahasa Jepang</td><td>XI</td></tr>
+
+            <tr><td>24</td><td>Kristin Setiyowati, S.Kom, Gr</td><td>Informatika</td><td>XI</td></tr>
+
+            <tr><td>25</td><td>Uswatun Fatimah, S.E</td><td>Prakarya dan Kewirausahaan</td><td>XI</td></tr>
+
+            <tr><td>26</td><td>Galih Kidung Wibowo, S.Sn</td><td rowspan="2">Mulok</td><td>XI</td></tr>
+            <tr><td>27</td><td>Danik Suselowati, S.Pd</td><td>XI</td></tr>
+
+            <tr><td>28</td><td>Andis Dwi Saputro, S.Sos.I</td><td rowspan="2">BK/BP</td><td>XI</td></tr>
+            <tr><td>29</td><td>Agus Winaryanto, S.Pd.H</td><td>XI</td></tr>
+
+        </table>
+    </div>
+
+    <footer>
+        © 2025 SMA Negeri 1 Cluring — Sistem Penyerahan Naskah PSAS
+    </footer>
 
 </body>
 </html>
