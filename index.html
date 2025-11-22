@@ -5,19 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PSAS Ganjil 2025/2026 | SMA Negeri 1 Cluring</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
   <style>
-    /* 🌙 Mode Gelap Otomatis */
+    /* -------------------------
+       Tema & Dasar (original)
+       -------------------------*/
     @media (prefers-color-scheme: dark) {
-      body {
-        background: linear-gradient(135deg, #1e1e2f, #0d9488);
-        color: #f0f0f0;
-      }
-      header, section, footer {
-        background: rgba(255, 255, 255, 0.05);
-      }
+      body { background: linear-gradient(135deg, #1e1e2f, #0d9488); color: #f0f0f0; }
+      header, section, footer { background: rgba(255,255,255,0.05); }
     }
-
     body {
       background: linear-gradient(135deg, #5f2c82, #49a09d);
       font-family: 'Poppins', sans-serif;
@@ -27,56 +22,93 @@
       scroll-behavior: smooth;
       overflow-x: hidden;
     }
-
-    /* ✨ Efek Fade Masuk Saat Scroll */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 1.2s ease, transform 1.2s ease;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Navigasi */
+    .fade-in { opacity: 0; transform: translateY(40px); transition: opacity 1.2s ease, transform 1.2s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
     nav a { transition: color 0.3s, transform 0.3s; }
     nav a:hover { color: #facc15; transform: scale(1.05); }
-
-    /* Tulisan Arab */
-    .arabic-gold {
-      font-size: 2rem;
-      color: #FFD700;
-      font-weight: bold;
-      text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
-      margin-bottom: 1rem;
-    }
-
-    /* Musik Tombol */
+    .arabic-gold { font-size: 2rem; color: #FFD700; font-weight: bold; text-shadow: 0 0 8px rgba(255,215,0,0.8); margin-bottom: 1rem; }
     #music-control {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: rgba(255,255,255,0.2);
-      border: 2px solid #facc15;
-      border-radius: 50%;
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 0 10px rgba(255,215,0,0.6);
-      transition: transform 0.3s;
+      position: fixed; bottom: 20px; right: 20px;
+      background: rgba(255,255,255,0.2); border: 2px solid #facc15; border-radius: 50%;
+      width: 48px; height: 48px; display:flex; align-items:center; justify-content:center;
+      cursor:pointer; box-shadow: 0 0 10px rgba(255,215,0,0.6); transition: transform 0.3s;
     }
-    #music-control:hover {
-      transform: scale(1.1);
-      background: rgba(255,255,255,0.3);
+    #music-control:hover { transform: scale(1.1); background: rgba(255,255,255,0.3); }
+
+    /* ============================
+       Glassmorphism Weather Card
+       ============================ */
+    .weather-floating {
+      position: absolute;
+      top: 28px;
+      right: 28px;
+      width: 360px;
+      max-width: calc(100% - 48px);
+      z-index: 40;
+      border-radius: 18px;
+      padding: 18px;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      box-shadow: 0 10px 30px rgba(7,7,10,0.45);
+      transition: transform .35s ease, box-shadow .35s ease;
+      border: 1px solid rgba(255,255,255,0.14);
     }
+    .weather-floating:hover { transform: translateY(-6px); box-shadow: 0 18px 36px rgba(7,7,10,0.55); }
+
+    /* Gold gradient border */
+    .gold-border {
+      position: relative;
+      border-radius: 20px;
+      padding: 1px; /* allows border-image look */
+      background: linear-gradient(135deg, rgba(249,223,127,0.08), rgba(212,175,55,0.06));
+    }
+    .gold-border::before{
+      content:'';
+      position:absolute; inset:0; border-radius:20px; padding:1px;
+      background: linear-gradient(90deg, rgba(249,223,127,0.9), rgba(212,175,55,0.9), rgba(249,223,127,0.9));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events:none; opacity:0.95;
+    }
+    /* inner content to show blur and transparent background */
+    .weather-inner {
+      border-radius: 18px;
+      padding: 12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .weather-day {
+      display:flex; flex-direction:column; align-items:center; gap:6px;
+      padding:10px; border-radius:14px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.04);
+      min-width: 0;
+    }
+    .weather-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; align-items:stretch; }
+
+    .weather-day .temp { font-size:1.6rem; font-weight:800; color: #fff; text-shadow: 0 2px 6px rgba(0,0,0,0.45); }
+    .weather-day .desc { font-size:0.9rem; color: #e9e9e9; text-align:center; min-height:38px; }
+
+    /* Responsive: move floating card to inline on small screens */
+    @media (max-width: 900px) {
+      .weather-floating { position: relative; top: auto; right: auto; margin: 18px auto 8px; width: calc(100% - 36px); }
+      .weather-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px) {
+      .weather-grid { grid-template-columns: 1fr; }
+      .weather-day .temp { font-size:1.4rem; }
+    }
+
+    /* small gold accent under title */
+    .gold-accent { height:4px; width:120px; margin:10px auto 0; border-radius:6px; background: linear-gradient(90deg,#f9df7f,#d4af37); box-shadow:0 4px 18px rgba(212,175,55,0.18); }
   </style>
 </head>
 
-<body class="flex flex-col items-center text-center">
+<body class="relative flex flex-col items-center text-center">
 
   <!-- Musik Instrumental -->
   <audio id="bg-music" loop preload="auto">
@@ -105,8 +137,6 @@
         <a href="alokasi.html">Alokasi</a>
         <a href="tata_tertib_peserta.html">Peserta</a>
         <a href="tata_tertib_pengawas.html">Pengawas</a>
-
-        <!-- ⭐ Tombol Tambahan PALING IDEAL -->
         <a href="dashboard-penyerahan.html" class="bg-yellow-400 text-gray-900 font-semibold px-4 py-1 rounded-full shadow-md hover:bg-yellow-500 transition-transform transform hover:scale-105">
           📘 Daftar Pengumpul Naskah
         </a>
@@ -115,11 +145,9 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="w-full min-h-screen flex flex-col justify-center items-center px-6 mt-20 fade-in">
+  <section class="w-full min-h-screen flex flex-col justify-center items-center px-6 mt-20 fade-in relative overflow-visible">
     <p class="arabic-gold">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
-    <h2 class="text-4xl md:text-5xl font-extrabold text-yellow-300 mb-4">
-      Penilaian Sumatif Akhir Semester
-    </h2>
+    <h2 class="text-4xl md:text-5xl font-extrabold text-yellow-300 mb-4">Penilaian Sumatif Akhir Semester</h2>
     <p class="text-xl text-gray-100 mb-4">Semester Ganjil Tahun Ajaran 2025/2026</p>
     <h3 class="text-2xl font-semibold mb-6">SMA Negeri 1 Cluring</h3>
     <p class="text-lg text-gray-200 italic max-w-2xl">
@@ -128,12 +156,38 @@
     <a href="#info" class="mt-8 bg-yellow-400 text-gray-900 font-semibold px-6 py-3 rounded-full hover:bg-yellow-500 transition-transform transform hover:scale-105">
       📅 Lihat Informasi PSAS
     </a>
+
+    <!-- Weather floating card (premium placement: right-top of hero) -->
+    <div class="weather-floating gold-border shadow-lg fade-in" id="weather-floating">
+      <div class="weather-inner">
+        <div class="flex items-center justify-between">
+          <div class="text-left">
+            <div class="text-sm text-gray-200">Wilayah</div>
+            <div class="font-bold text-yellow-300">Cluring, Banyuwangi</div>
+          </div>
+          <div class="text-right">
+            <div class="text-xs text-gray-200">Prakiraan 3 Hari</div>
+            <div style="font-weight:800; font-size:14px; color:#fff;">Sumber: BMKG</div>
+          </div>
+        </div>
+
+        <div class="gold-accent"></div>
+
+        <div id="weather-grid" class="weather-grid mt-4">
+          <!-- cards diisi lewat JS -->
+          <div class="weather-day">Memuat...</div>
+          <div class="weather-day">Memuat...</div>
+          <div class="weather-day">Memuat...</div>
+        </div>
+      </div>
+    </div>
+
   </section>
 
   <main id="info" class="w-full max-w-6xl mx-auto px-6 md:px-10">
 
     <!-- Countdown Section -->
-    <section class="grid md:grid-cols-2 gap-8 mt-20 fade-in">
+    <section class="grid md:grid-cols-2 gap-8 mt-6 fade-in">
       <div class="bg-white bg-opacity-10 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all">
         <h3 class="text-xl font-semibold mb-2">⏳ Menuju Pelaksanaan PSAS</h3>
         <p class="text-sm text-gray-200">Pelaksanaan dimulai pada <b>1 Desember 2025</b></p>
@@ -211,28 +265,91 @@
     // Fade Animasi
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.2 });
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.18 });
     fadeEls.forEach(el => observer.observe(el));
 
     // Musik Otomatis Saat Scroll
     const audio = document.getElementById('bg-music');
     const musicBtn = document.getElementById('music-control');
     let musicPlayed = false;
-
     window.addEventListener('scroll', () => {
-      if (!musicPlayed) {
-        audio.play().catch(()=>{});
-        musicPlayed = true;
-      }
+      if (!musicPlayed) { audio.play().catch(()=>{}); musicPlayed = true; }
     });
+    musicBtn.addEventListener('click', () => { if (audio.paused) audio.play(); else audio.pause(); });
 
-    musicBtn.addEventListener('click', () => {
-      if (audio.paused) audio.play();
-      else audio.pause();
-    });
+    // ========================================
+    // PRAKIRAAN CUACA 3 HARI (BMKG) + FALLBACK
+    // ========================================
+    const BMKG_URL = "https://api.bmkg.go.id/publik/prakiraan-cuaca?adm4=3571060002"; // Cluring, Banyuwangi
+    async function loadBMKG3Day() {
+      const container = document.getElementById('weather-grid');
+      container.innerHTML = `<div class="weather-day">Memuat...</div><div class="weather-day">Memuat...</div><div class="weather-day">Memuat...</div>`;
+      try {
+        const res = await fetch(BMKG_URL);
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const json = await res.json();
+
+        // safe-access: BMKG biasanya mengembalikan object dengan array `data`
+        const arr = Array.isArray(json.data) ? json.data : (json && json.data ? json.data : null);
+        if (!arr || arr.length === 0) throw new Error('Data BMKG kosong');
+
+        // group by local_date (tampak konsisten), ambil 3 unique tanggal pertama
+        const grouped = {};
+        for (const item of arr) {
+          const date = item.local_date || (item.local_datetime ? item.local_datetime.split(' ')[0] : null);
+          if (!date) continue;
+          if (!grouped[date]) grouped[date] = item;
+        }
+        const dates = Object.keys(grouped).slice(0, 3);
+
+        // render
+        container.innerHTML = dates.map(d => {
+          const it = grouped[d];
+          const icon = it.weather_icon || it.weather_icon_code || '01';
+          const temp = (it.t !== undefined && it.t !== null) ? it.t : (it.temp ? it.temp : '—');
+          const desc = it.weather_desc || it.weather || (it.keterangan ? it.keterangan : 'Data cuaca');
+          const dateLabel = new Date(d).toLocaleDateString('id-ID', { weekday:'long', day:'numeric', month:'long' });
+          // safe icon URL (BMKG icon path)
+          const iconUrl = `https://api.bmkg.go.id/publik/icon/cuaca/${icon}.png`;
+          return `
+            <div class="weather-day">
+              <div class="text-sm text-gray-200">${dateLabel}</div>
+              <img src="${iconUrl}" onerror="this.style.display='none'" class="w-16 h-16 object-contain">
+              <div class="temp">${temp}°C</div>
+              <div class="desc">${desc}</div>
+            </div>
+          `;
+        }).join('');
+      } catch (err) {
+        // jika gagal (CORS atau offline), tampilkan fallback demo dan catatan
+        console.warn('BMKG fetch failed:', err);
+        const demo = [
+          {label: 'Hari Ini', icon:'01', t:'29', desc:'Cerah Berawan'},
+          {label: 'Besok', icon:'10', t:'27', desc:'Hujan Ringan'},
+          {label: 'Lusa', icon:'03', t:'28', desc:'Berawan'}
+        ];
+        container.innerHTML = demo.map(d => `
+          <div class="weather-day">
+            <div class="text-sm text-gray-200">${d.label}</div>
+            <img src="https://api.bmkg.go.id/publik/icon/cuaca/${d.icon}.png" onerror="this.style.display='none'" class="w-16 h-16 object-contain">
+            <div class="temp">${d.t}°C</div>
+            <div class="desc">${d.desc}</div>
+          </div>
+        `).join('');
+        // tampilkan notifikasi ringan di card (tampak kecil)
+        const flo = document.getElementById('weather-floating');
+        if (flo && !document.getElementById('bmkg-note')) {
+          const note = document.createElement('div');
+          note.id = 'bmkg-note';
+          note.innerHTML = `<p class="text-xs text-yellow-100 mt-3">Catatan: data BMKG gagal dimuat (CORS / jaringan). Menampilkan data demo.</p>`;
+          flo.querySelector('.weather-inner').appendChild(note);
+        }
+      }
+    }
+
+    // jalankan saat load
+    loadBMKG3Day();
   </script>
 
 </body>
